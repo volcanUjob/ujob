@@ -216,17 +216,17 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                {{ user.email }}
+                {{ user.firstName }} {{" "}} {{ user.lastName }}
               </p>
               <p>
-                <i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>
-                London, UK
+                <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
+                {{user.email}}
               </p>
               <p>
                 <i
-                  class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"
+                  class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"
                 ></i>
-                April 1, 1988
+                {{user.job}}
               </p>
             </div>
           </div>
@@ -538,7 +538,7 @@
           title="My Account"
         >
           <img
-            src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+          src="assets/{{img}}"
             class="w3-circle"
             style="height: 23px; width: 23px"
             alt="Avatar"

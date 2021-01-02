@@ -30,6 +30,15 @@ export class EditProfileCmpComponent implements OnInit {
       console.log(this.user);
       // })
     }
+    onSelectImage(event: any) {
+      // this.image=event.target.files[0].name
+  
+      const file = event.target.files[0].name;
+  
+      this.editProfData.image = file;
+      // this.image=event.target.name
+      // console.log(event.target.files[0])
+    }
     editProf(form: NgForm) {
       // console.log(form);
       var obj = form.value;

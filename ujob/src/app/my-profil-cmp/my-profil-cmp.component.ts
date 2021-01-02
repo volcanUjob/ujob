@@ -20,6 +20,7 @@ export class MyProfilCmpComponent implements OnInit {
   test: string = '';
   pathOrigine: string = 'http://localhost:3000/';
   user = JSON.parse(localStorage.getItem('user') || '{}');
+  img : any
   constructor(
     private router: Router,
     private httpClient: HttpClient,
@@ -49,10 +50,22 @@ export class MyProfilCmpComponent implements OnInit {
   }
   getUserById() {
     var id = this.user._id;
+    
     this.userService.myNewProf(id).subscribe((response) => {
       this.user = response;
+      console.log(this.user.image);
+      var x = this.user.image.toString().split('');
+      var image = ""
+      for (var i = 12; i < x.length; i++) {
+        image+= x[i];
+        
+      }
+          this.img=image
+      console.log(this.img);
     });
   }
+
+  
 
   addPost(form: NgForm) {
     console.log(this.user._id);
