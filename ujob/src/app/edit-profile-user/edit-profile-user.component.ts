@@ -52,8 +52,8 @@ export class EditProfileUserComponent implements OnInit {
     skill2: '',
     skill3: '',
   };
-  
-  constructor(private edit: EditProfUserService,private router: Router) {}
+
+  constructor(private edit: EditProfUserService, private router: Router) {}
 
   ngOnInit(): void {
     // this..subscribe(user=>{
@@ -62,6 +62,17 @@ export class EditProfileUserComponent implements OnInit {
     console.log(this.user);
     // })
   }
+
+  onSelectImage(event: any) {
+    // this.image=event.target.files[0].name
+
+    const file = event.target.files[0].name;
+
+    this.editProfData.image = file;
+    // this.image=event.target.name
+    // console.log(event.target.files[0])
+  }
+
   editProf(form: NgForm) {
     // console.log(form);
     var obj = form.value;
@@ -71,8 +82,7 @@ export class EditProfileUserComponent implements OnInit {
     this.edit.editProf(id, obj).subscribe(
       (res: any) => console.log(res)
       // (err: any) => console.log(err)
-
     );
-    this.router.navigate(['/myprofile-user'])
+    this.router.navigate(['/myprofile-user']);
   }
 }

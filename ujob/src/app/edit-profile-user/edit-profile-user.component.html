@@ -258,10 +258,12 @@
                   <div class="col-md-4">
                     <input
                       ngModel
+                      (change)="onSelectImage($event)"
+                      type="file"
                       id="image"
                       name="image"
                       class="input-file"
-                      type="file"
+                      
                     />
                   </div>
                 </div>
