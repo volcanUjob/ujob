@@ -17,6 +17,8 @@ export class EditProfileUserComponent implements OnInit {
     job: '',
     email: '',
     password: '',
+    latitude: "",
+    longitude: "",
     image: '',
     phone: '',
     webSite: '',
@@ -51,6 +53,7 @@ export class EditProfileUserComponent implements OnInit {
     skill1: '',
     skill2: '',
     skill3: '',
+    googleId: ""
   };
 
   constructor(private edit: EditProfUserService, private router: Router) {}

@@ -19,7 +19,7 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
 import { EditProfileCmpComponent } from './edit-profile-cmp/edit-profile-cmp.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
-
+import { MapComponent} from './map/map.component';
 
 
 const routes: Routes = [
@@ -41,7 +41,8 @@ const routes: Routes = [
   { path: "prof-user", component: ProfUserComponent},
   { path: "edit-profile-cmp", component: EditProfileCmpComponent },
   { path: "home-user",component: HomeUserComponent},
-  { path: "home-cmp",component: HomeCmpComponent}
+  { path: "home-cmp",component: HomeCmpComponent},
+  { path: "map", component: MapComponent },
 ];
 
 @NgModule({
@@ -65,6 +66,7 @@ export const routingComponents = [
   HomeUserComponent,
   TablePostsComponent,
   EditProfileCmpComponent,
-  HomeCmpComponent
+  HomeCmpComponent,
+  MapComponent
 
 ];
