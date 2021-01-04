@@ -101,46 +101,21 @@
             <div>
               <!-- Text input-->
 
+             
               <div class="form-group">
-                <label class="col-md-4 control-label" for="Name Of Company"
-                  >Name Of Company
-                </label>
-
+                <label class="col-md-4 control-label" for="Upload photo"
+                  >Upload photo</label
+                >
                 <div class="col-md-4">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i class="fa fa-user"> </i>
-                    </div>
-                    <input
-                      ngModel
-                      id="username"
-                      name="username"
-                      type="text"
-                      placeholder="Name Of Company"
-                      class="form-control input-md"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="email"
-                  >email
-                </label>
-
-                <div class="col-md-4">
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i class="fa fa-user"> </i>
-                    </div>
-                    <input
-                      ngModel
-                      id="email"
-                      name="email"
-                      type="text"
-                      placeholder="email"
-                      class="form-control input-md"
-                    />
-                  </div>
+                  <input
+                    ngModel
+                    (change)="onSelectImage($event)"
+                    type="file"
+                    id="image"
+                    name="image"
+                    class="input-file"
+                    
+                  />
                 </div>
               </div>
               <div class="form-group">
@@ -163,6 +138,49 @@
                   </div>
                 </div>
               </div>
+
+
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Latitude "
+                  >Latitude
+                </label>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <input
+                      ngModel
+                      id="latitude"
+                      name="latitude"
+                      type="text"
+                      placeholder="Latitude "
+                      class="form-control input-md"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Longitude "
+                  >Longitude
+                </label>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <input
+                      ngModel
+                      id="longitude"
+                      name="longitude"
+                      type="text"
+                      placeholder="Longitude "
+                      class="form-control input-md"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4">

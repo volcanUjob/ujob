@@ -14,7 +14,11 @@ export class ProfUserComponent implements OnInit {
   image: any='';
   isLoggedIn = false
   user = JSON.parse(localStorage.getItem('user') || '{}');
+
+  img : any
+
   pathOrigine: string = 'http://localhost:3000/';
+
 
   constructor(private _http: HttpClient, private router: Router,
     private httpClient: HttpClient,
@@ -46,10 +50,24 @@ export class ProfUserComponent implements OnInit {
     }  
   }
 
+
+  
+
+
   getUserById() {
     var id = this.user._id;
+    
     this.userService.myNewProf(id).subscribe((response) => {
       this.user = response;
+      console.log(this.user.image);
+      var x = this.user.image.toString().split('');
+      var image = ""
+      for (var i = 12; i < x.length; i++) {
+        image+= x[i];
+        
+      }
+          this.img=image
+      console.log(this.img);
     });
   }
  addPost(form: NgForm) {

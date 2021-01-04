@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -35,6 +35,7 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
 import { TablePostsComponent } from './table-posts/table-posts.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { HomeCmpComponent } from './home-cmp/home-cmp.component';
     SigneCmpComponent,
     TablePostsComponent,
     HomeUserComponent,
-    HomeCmpComponent
+    HomeCmpComponent,
+    MapComponent
 
   ],
   imports: [
@@ -67,7 +69,9 @@ import { HomeCmpComponent } from './home-cmp/home-cmp.component';
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+    
   ],
+  schemas : [ CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     AuthService,
     {
