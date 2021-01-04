@@ -20,6 +20,7 @@ import { EditProfileCmpComponent } from './edit-profile-cmp/edit-profile-cmp.com
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
 import { MapComponent} from './map/map.component';
+import { ResumeUserComponent } from './resume-user/resume-user.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: "home-user",component: HomeUserComponent},
   { path: "home-cmp",component: HomeCmpComponent},
   { path: "map", component: MapComponent },
+  { path:"resume-user",component: ResumeUserComponent}
 ];
 
 @NgModule({
@@ -67,6 +69,7 @@ export const routingComponents = [
   TablePostsComponent,
   EditProfileCmpComponent,
   HomeCmpComponent,
-  MapComponent
+  MapComponent,
+  ResumeUserComponent
 
 ];

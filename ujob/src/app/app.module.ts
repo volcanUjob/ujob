@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +36,7 @@ import { TablePostsComponent } from './table-posts/table-posts.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
 import { MapComponent } from './map/map.component';
+import { ResumeUserComponent } from './resume-user/resume-user.component';
 
 @NgModule({
   declarations: [
@@ -59,10 +60,14 @@ import { MapComponent } from './map/map.component';
     TablePostsComponent,
     HomeUserComponent,
     HomeCmpComponent,
-    MapComponent
+    MapComponent,
+    ResumeUserComponent
 
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey:""
+    }),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -71,7 +76,7 @@ import { MapComponent } from './map/map.component';
     SocialLoginModule,
     
   ],
-  schemas : [ CUSTOM_ELEMENTS_SCHEMA],
+ 
   providers: [
     AuthService,
     {

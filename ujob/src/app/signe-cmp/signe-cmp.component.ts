@@ -12,6 +12,7 @@ export class SigneCmpComponent implements OnInit {
     username: '',
     email: '',
     password: '',
+    
   };
   constructor(private _auth: AuthService , private router: Router) {}
 
