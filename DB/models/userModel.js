@@ -22,6 +22,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  latitude: String,
+  longitude: String,
   job: String,
   phone: String,
   image: String,
@@ -57,10 +59,10 @@ const userSchema = new mongoose.Schema({
   skill1: String,
   skill2: String,
   skill3: String,
-
   googleId: {
     type: String
-  }
+  }, 
+ 
 });
 
 var userModel = mongoose.model("user", userSchema);

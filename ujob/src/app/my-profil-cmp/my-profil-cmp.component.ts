@@ -14,12 +14,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./my-profil-cmp.component.scss'],
 })
 export class MyProfilCmpComponent implements OnInit {
-  isLoggedIn = false
+  postCmp:any[]=[];
+  image: any='';
+  isLoggedIn = false;
   check: boolean = false;
   id: any = '';
   test: string = '';
   pathOrigine: string = 'http://localhost:3000/';
   user = JSON.parse(localStorage.getItem('user') || '{}');
+  img : any
   constructor(
     private router: Router,
     private httpClient: HttpClient,
@@ -29,12 +32,20 @@ export class MyProfilCmpComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserById();
-
+    
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
     };
+
+    this.httpClient.get(this.pathOrigine+'post', httpOptions)
+     .subscribe((data:any)=>{
+       this.postCmp.push(...data);
+       this.postCmp=this.postCmp.filter(p=>p.posterId==this.user._id)
+       console.log(this.postCmp)
+     })
+
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.id !== null) {
       this.check = true;
@@ -47,24 +58,61 @@ export class MyProfilCmpComponent implements OnInit {
         });
     }
   }
+
+  fileChoosen(event:any){
+    if(event.target.value){
+      this.image=<File>event.target.files[0]
+
+      console.log(this.image)
+    }  
+  }
+
   getUserById() {
     var id = this.user._id;
+    
     this.userService.myNewProf(id).subscribe((response) => {
       this.user = response;
+      console.log(this.user.image);
+      var x = this.user.image.toString().split('');
+      var image = ""
+      for (var i = 12; i < x.length; i++) {
+        image+= x[i];
+        
+      }
+          this.img=image
+      console.log(this.img);
     });
   }
 
+  
+
   addPost(form: NgForm) {
-    console.log(this.user._id);
+    let fd=new FormData();
+    if(this.image!==''){
+      fd.append('image', this.image, this.image.name);
+      this.httpClient.post(this.pathOrigine +'api/upload', fd)
+      .subscribe((res:any)=>{
+        console.log(this.user._id);
 
     var obj = {
       posterId: this.user._id,
       message: form.value.post,
-    };
+      imageURL: res.urlImage
+    }
+    
 
     this.userService.newPost(obj).subscribe((response) => {
       console.log(response);
+      if(this.postCmp.length>0){
+      this.postCmp.unshift({message:obj.message , imageURL:obj.imageURL})
+      }else{
+        this.postCmp.push({message:obj.message , imageURL:obj.imageURL})
+      }
     });
+        console.log(res);
+      })
+    }
+    
   }
 
   onlogout() {
