@@ -1,0 +1,76 @@
+<!-- <div class="ui container">
+  <h1 class="ui header">Simple WebRTC Messenger</h1>
+  <hr />
+  <div class="video-grid">
+    <div *ngFor="let video of videos">
+      <span
+        *ngIf="video.userId !== currentUserId; else currentUserVideoLabel"
+        >{{ video.userId }}</span
+      >
+      <ng-template #currentUserVideoLabel>
+        <span></span>
+      </ng-template>
+      <video
+        [srcObject]="video.srcObject"
+        (loadedmetadata)="onLoadedMetadata($event)"
+        [muted]="video.muted"
+      ></video>
+    </div>
+  </div>
+</div> -->
+
+<div>
+  <div class="ui container">
+    <h1 class="ui header">Simple WebRTC Messenger</h1>
+    <hr />
+    <div class="ui two column stackable grid">
+      <!-- Local Camera -->
+
+      <div class="video-grid">
+        <div *ngFor="let video of videos">
+          <span
+            *ngIf="video.userId !== currentUserId; else currentUserVideoLabel"
+            >{{ video.userId }}</span
+          >
+          <ng-template #currentUserVideoLabel>
+            <span></span>
+          </ng-template>
+          <video
+            [srcObject]="video.srcObject"
+            (loadedmetadata)="onLoadedMetadata($event)"
+            [muted]="video.muted"
+          ></video>
+        </div>
+      </div>
+
+      <h4 class="ui center aligned header" style="margin-left: 80%">
+        Local Camera
+      </h4>
+    </div>
+
+    <!-- Remote Cameras -->
+    <h3 class="ui center aligned header">Remote Cameras</h3>
+
+    <div class="cla">
+      <img
+        class="ui centered medium image"
+        src="../../assets/assets/assets/imges/image.png"
+      />
+
+      <img
+        class="ui centered medium image"
+        src="../../assets/assets/assets/imges/image.png"
+      />
+
+      <img
+        class="ui centered medium image"
+        src="../../assets/assets/assets/imges/image.png"
+      />
+
+      <img
+        class="ui centered medium image"
+        src="../../assets/assets/assets/imges/image.png"
+      />
+    </div>
+  </div>
+</div>

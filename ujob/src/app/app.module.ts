@@ -13,9 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
 import { PaymeComponent } from './payme/payme.component';
-
-
-
+import { SocketIoModule } from 'ngx-socket-io';
 
 import { AuthService } from './auth.service';
 import {
@@ -30,11 +28,11 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
 
 import { ProfUserComponent } from './prof-user/prof-user.component';
 
-
-
 import { TablePostsComponent } from './table-posts/table-posts.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
+import { ChatComponent } from './chat/chat.component';
+import { RoomComponent } from './room/room.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +45,6 @@ import { HomeCmpComponent } from './home-cmp/home-cmp.component';
     EditProfileUserComponent,
     MyProfilCmpComponent,
 
-
     PaymeComponent,
     ProfUserComponent,
 
@@ -57,8 +54,9 @@ import { HomeCmpComponent } from './home-cmp/home-cmp.component';
     SigneCmpComponent,
     TablePostsComponent,
     HomeUserComponent,
-    HomeCmpComponent
-
+    HomeCmpComponent,
+    ChatComponent,
+    RoomComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +65,9 @@ import { HomeCmpComponent } from './home-cmp/home-cmp.component';
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+    SocketIoModule.forRoot({
+      url: '/',
+    }),
   ],
   providers: [
     AuthService,

@@ -19,8 +19,8 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
 import { EditProfileCmpComponent } from './edit-profile-cmp/edit-profile-cmp.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
-
-
+import { ChatComponent } from './chat/chat.component';
+import { RoomComponent } from './room/room.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -38,10 +38,12 @@ const routes: Routes = [
   { path: 'myprofile-cmp/:id', component: MyProfilCmpComponent },
   { path: 'table-posts', component: TablePostsComponent },
   { path: 'payme', component: PaymeComponent },
-  { path: "prof-user", component: ProfUserComponent},
-  { path: "edit-profile-cmp", component: EditProfileCmpComponent },
-  { path: "home-user",component: HomeUserComponent},
-  { path: "home-cmp",component: HomeCmpComponent}
+  { path: 'prof-user', component: ProfUserComponent },
+  { path: 'edit-profile-cmp', component: EditProfileCmpComponent },
+  { path: 'home-user', component: HomeUserComponent },
+  { path: 'home-cmp', component: HomeCmpComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: 'room/:room_id', component: RoomComponent },
 ];
 
 @NgModule({
@@ -65,6 +67,5 @@ export const routingComponents = [
   HomeUserComponent,
   TablePostsComponent,
   EditProfileCmpComponent,
-  HomeCmpComponent
-
+  HomeCmpComponent,
 ];

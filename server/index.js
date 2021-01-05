@@ -160,7 +160,9 @@ app.get(
 
 app.use("/", user);
 app.use("/", post);
-
+// app.get("/:room", (req, res) => {
+//   res.render("room", { roomId: req.params.room });
+// });
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
