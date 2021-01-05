@@ -37,6 +37,7 @@ import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
 import { MapComponent } from './map/map.component';
 import { ResumeUserComponent } from './resume-user/resume-user.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ResumeUserComponent } from './resume-user/resume-user.component';
     HomeUserComponent,
     HomeCmpComponent,
     MapComponent,
-    ResumeUserComponent
+    ResumeUserComponent,
+    ChatComponent
 
   ],
   imports: [
