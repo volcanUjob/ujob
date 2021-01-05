@@ -5,6 +5,7 @@ var postCmpControle = require("../../DB/controles/companyPostControle");
 router.post("/post",postCmpControle.createPost);
 router.get("/post",postCmpControle.display_all_posts);
 router.get("/postUserInfo",postCmpControle.display_all_posts_with_userInfo);
+router.delete("/post/:postId", postCmpControle.delete_post)
 
 
 

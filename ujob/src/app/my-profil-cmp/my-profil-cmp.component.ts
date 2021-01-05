@@ -57,6 +57,15 @@ export class MyProfilCmpComponent implements OnInit {
         });
     }
   }
+  deletePost(item:any){
+    if(item._id){
+      this.httpClient.delete(this.pathOrigine+"post/"+item._id)
+      .subscribe((res: any) => {
+        alert('item deleted from data base')
+        this.postCmp=this.postCmp.filter(p=>p._id!==item._id)
+      })
+    }
+  }
 
   fileChoosen(event:any){
     if(event.target.value){
