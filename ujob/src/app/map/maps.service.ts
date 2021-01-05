@@ -9,13 +9,13 @@ interface Location {
   city: string;
   ip: 0;
 }
-@Injectable({
+@Injectable( {
   providedIn: "root",
-})
+} )
 export class MapsService {
-  constructor(private http: HttpClient) {}
+  constructor( private http: HttpClient ) { }
 
   getLocation() {
-    return this.http.get<Location>("https://ipapi.co/json/");
+    return this.http.get<Location>( "https://ipapi.co/json/" );
   }
 }

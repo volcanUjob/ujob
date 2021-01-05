@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
   latitude: String,
   longitude: String,
   job: String,
@@ -61,8 +62,7 @@ const userSchema = new mongoose.Schema({
   skill3: String,
   googleId: {
     type: String
-  }, 
- 
+  }
 });
 
 var userModel = mongoose.model("user", userSchema);
