@@ -47,6 +47,7 @@ export class ProfUserComponent implements OnInit {
       this.image=<File>event.target.files[0]
 
       console.log(this.image)
+      
     }  
   }
 

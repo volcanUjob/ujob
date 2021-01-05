@@ -7,6 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HomeCmpComponent implements OnInit {
   postCmp:any[]=[];
+  filter: any = [];
+  name = '';
   pathOrigine: string = 'http://localhost:3000/';
   constructor(private httpClient: HttpClient) { }
 
@@ -20,10 +22,17 @@ export class HomeCmpComponent implements OnInit {
     this.httpClient.get(this.pathOrigine+'postUserInfo', httpOptions)
      .subscribe((data:any)=>{
        this.postCmp.push(...data);
-      
+       this.filter.push(...data);
        console.log(this.postCmp)
      })
 
   }
-
+  onChange(event: any) {
+    this.filter = this.postCmp.filter((item: any) => {
+      if (item?.posterId?.username.includes(this.name) || item.message.includes(this.name)) {
+        
+        return item;
+      }
+    });
+  }
 }

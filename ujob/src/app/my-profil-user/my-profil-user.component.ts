@@ -32,4 +32,7 @@ export class MyProfilUserComponent implements OnInit {
       console.log(this.img);
     });
   }
+  print(){
+    window.print()
+  }
 }

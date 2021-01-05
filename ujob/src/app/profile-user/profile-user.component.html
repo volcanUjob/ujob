@@ -1,269 +1,565 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Orbit - Bootstrap 4 Resume/CV Template for Developers</title>
-    
-    <!-- Meta -->
-    
-</head> 
-<header>
-  <!-- Header Start -->
-  <div class="header-area">
-    <div class="main-header">
-      <div class="header-top d-none d-lg-block">
-        <div class="container">
-          <div class="col-xl-12">
-            <div
-              class="row d-flex justify-content-between align-items-center"
-            >
-              <div class="header-info-left">
-                <ul>
-                  <li>
-                    <i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm
-                  </li>
-                  <li>Sun: Closed</li>
-                </ul>
-              </div>
-              <div class="header-info-right">
-                <ul class="header-social">
-                  <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header-bottom header-sticky">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- Logo -->
-            <div class="col-xl-2 col-lg-2">
-              <div class="logo">
-                <a href="index.html"
-                  ><img src="../../assets/assets/img/logo/logo222.png" alt=""
-                /></a>
-              </div>
-            </div>
-            <div class="col-xl-10 col-lg-10">
+<html>
+  <title>ujob</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Open Sans", sans-serif;
+    }
+  </style>
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header">
+        <div class="header-top d-none d-lg-block">
+          <div class="container">
+            <div class="col-xl-12">
               <div
-                class="menu-wrapper d-flex align-items-center justify-content-end"
+                class="row d-flex justify-content-between align-items-center"
               >
-                <!-- Main-menu -->
-                <div class="main-menu d-none d-lg-block">
-                  <nav>
-                    <ul id="navigation">
-                      <li><a ></a></li>
-                      <li><a></a></li>
-                      <li><a></a></li>
-                      <li>
-                        <a href="blog.html"></a>
-                        <ul class="submenu">
-                          <li><a href="blog.html"></a></li>
-                          <li>
-                            <a href="blog_details.html"></a>
-                          </li>
-                          <li><a href="elements.html"></a></li>
-                        </ul>
-                      </li>
-                      <li><a href="contact.html"></a></li>
-                    </ul>
-                  </nav>
+                <div class="header-info-left">
+                  <ul>
+                    <li>
+                      <i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm
+                    </li>
+                    <li>Sun: Closed</li>
+                  </ul>
+                </div>
+                <div class="header-info-right">
+                  <ul class="header-social">
+                    <li>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <!-- Mobile Menu -->
-            <div class="col-12">
-              <div class="mobile_menu d-block d-lg-none"></div>
+          </div>
+        </div>
+        <div class="header-bottom header-sticky">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- Logo -->
+              <div class="col-xl-2 col-lg-2">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="../../assets/assets/img/logo/logo222.png" alt=""
+                  /></a>
+                </div>
+              </div>
+              <div class="col-xl-10 col-lg-10">
+                <div
+                  class="menu-wrapper d-flex align-items-center justify-content-end"
+                >
+                  <!-- Main-menu -->
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a routerLink="/home-user">HOME</a></li>
+                        <li><a routerLink="/prof-user"> MY PROFILE</a></li>
+                        <li><a routerLink="/myprofile-user">EDIT RESUME</a></li>
+                        <li>
+                          <a routerLink="/edit-profile-user"> </a>
+                        </li>
+                        <li>
+                          <a > <button (click)="onlogout()">LOGOUT</button></a>
+                        </li>
+                        <li>
+                          <a href="blog.html"></a>
+                          <ul class="submenu">
+                            <li><a href="blog.html"></a></li>
+                            <li>
+                              <a href="blog_details.html"></a>
+                            </li>
+                            <li><a href="elements.html"></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="contact.html"></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Header End -->
-</header>
-<div  class="container">
-<body>
-    <div class="wrapper">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img class="profile" src="../../assets/assets/assets/images/profile.png" alt="" />
-                <h1 class="name">Alan Doe</h1>
-                <h3 class="tagline">Full Stack Developer</h3>
-            </div><!--//profile-container-->
-            
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto: yourname@email.com">alan.doe@website.com</a></li>
-                    <li class="phone"><i class="fas fa-phone"></i><a href="tel:0123 456 789">0123 456 789</a></li>
-                    <li class="website"><i class="fas fa-globe"></i><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/" target="_blank">portfoliosite.com</a></li>
-                  
-                    <li class="github"><i class="fab fa-github"></i><a href="#" target="_blank">github.com/username</a></li>
-                    <li class="twitter"><i class="fab fa-twitter"></i><a href="https://twitter.com/3rdwave_themes" target="_blank">@twittername</a></li>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
-                <div class="item">
-                    <h4 class="degree">MSc in Computer Science</h4>
-                    <h5 class="meta">University of London</h5>
-	                    <div class="time">2016 - 2018</div>
-                </div><!--//item-->
-                
-            </div><!--//education-container-->
-            
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>English <span class="lang-desc">(Native)</span></li>
-                    <li>French <span class="lang-desc">(Professional)</span></li>
-                    <li>Spanish <span class="lang-desc">(Professional)</span></li>
-                </ul>
-            </div><!--//interests-->
-            
-            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Climbing</li>
-                    <li>Snowboarding</li>
-                    <li>Cooking</li>
-                </ul>
-            </div><!--//interests-->
-            
-        </div><!--//sidebar-wrapper-->
-        
-        <div class="main-wrapper">
-            
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-user"></i></span>Career Profile</h2>
-                <div class="summary">
-                    <p>Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/" target="_blank">download this free resume/CV template here</a>. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.</p>
-                </div><!--//summary-->
-            </section><!--//section-->
-            
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences</h2>
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Lead Developer</h3>
-                            <div class="time">2019 - Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Startup Hubs, San Francisco</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>  
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Senior Software Engineer</h3>
-                            <div class="time">2018 - 2019</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Google, London</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
-                        
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">UI Developer</h3>
-                            <div class="time">2016 - 2018</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Amazon, London</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-            </section><!--//section-->
-            
-            <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
-                
-                <div class="item">
-                    <span class="project-title">blabla</span> - <span class="project-tagline">A responsive website template designed to help developers launch their software projects. </span>
-                    
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title">Launch</span> - <span class="project-tagline">A responsive website template designed to help startups promote their products or services.</span>
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title">DevCard</span> - <span class="project-tagline">A portfolio website template designed for software developers.</span>
-                </div><!--//item-->
-               
-                
-            </section><!--//section-->
-            
-            <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
-                <div class="skillset">        
-                    
-                    
-                    <div class="item">
-                        <h3 class="level-title">Javascript &amp; jQuery</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                              
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Angular</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">HTML5 &amp; CSS</h3>
-                        <div class="progress level-bar">
-							    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                
-                    </div><!--//item-->
-                    
-                    
-                    
-                    <div class="item">
-                        <h3 class="level-title">Sketch &amp; Photoshop</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                </div>  
-            </section><!--//skills-section-->
-            
-        </div><!--//main-body-->
+    <!-- Header End -->
+  </header>
+  <!-- <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+      <a
+        class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+        href="javascript:void(0);"
+        onclick="openNav()"
+        ><i class="fa fa-bars"></i
+      ></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+        ><i class="fa fa-home w3-margin-right"></i>Logo</a
+      >
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        title="News"
+        ><i class="fa fa-globe"></i
+      ></a>
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        title="Account Settings"
+        ><i class="fa fa-user"></i
+      ></a>
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        title="Messages"
+        ><i class="fa fa-envelope"></i
+      ></a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button w3-padding-large" title="Notifications">
+          <i class="fa fa-bell"></i
+          ><span class="w3-badge w3-right w3-small w3-green">3</span>
+        </button>
+        <div
+          class="w3-dropdown-content w3-card-4 w3-bar-block"
+          style="width: 300px"
+        >
+          <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+          <a href="#" class="w3-bar-item w3-button"
+            >John Doe posted on your wall</a
+          >
+          <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+        title="My Account"
+      >
+        <img
+          src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+          class="w3-circle"
+          style="height: 23px; width: 23px"
+          alt="Avatar"
+        />
+      </a>
     </div>
- 
-    <footer class="footer">
-        <div class="text-center">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-        </div><!--//container-->
-    </footer><!--//footer-->
-        
-</body>
-</div>
-</html> 
+  </div> -->
+  <body class="w3-theme-l5">
+    <!-- Navbar -->
 
+    <!-- Navbar on small screens -->
+    <div
+      id="navDemo"
+      class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large"
+    >
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+    </div>
+
+    <!-- Page Container -->
+    <div
+      class="w3-container w3-content"
+      style="max-width: 1400px; margin-top: 80px"
+    >
+      <!-- The Grid -->
+      <div class="w3-row">
+        <!-- Left Column -->
+        <div class="w3-col m3">
+          <!-- Profile -->
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container">
+              <h4 class="w3-center">username</h4>
+              <p class="w3-center">
+                <img
+                  src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+                  class="w3-circle"
+                  style="height: 106px; width: 106px"
+                  alt="Avatar"
+                />
+              </p>
+              <hr />
+              <p>
+                <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
+                firstName last name 
+              </p>
+              <p>
+                 <i class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"></i>
+                resume
+              </p>
+              <p>
+                <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
+                email
+              </p>
+              <p>
+                <i
+                  class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"
+                ></i>
+                job
+              </p>
+            </div>
+          </div>
+          <br />
+
+          <!-- Accordion -->
+          <div class="w3-card w3-round">
+            <div class="w3-white">
+              <button
+                onclick="myFunction('Demo1')"
+                class="w3-button w3-block w3-theme-l1 w3-left-align"
+              >
+                <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My
+                Groups
+              </button>
+              <div id="Demo1" class="w3-hide w3-container">
+                <p>Some text..</p>
+              </div>
+              <button
+                onclick="myFunction('Demo2')"
+                class="w3-button w3-block w3-theme-l1 w3-left-align"
+              >
+                <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My
+                Events
+              </button>
+              <div id="Demo2" class="w3-hide w3-container">
+                <p>Some other text..</p>
+              </div>
+              <button
+                onclick="myFunction('Demo3')"
+                class="w3-button w3-block w3-theme-l1 w3-left-align"
+              >
+                <i class="fa fa-users fa-fw w3-margin-right"></i> My Photos
+              </button>
+              <div id="Demo3" class="w3-hide w3-container">
+                <div class="w3-row-padding">
+                  <br />
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/lights.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/nature.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/mountains.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/forest.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/nature.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                  <div class="w3-half">
+                    <img
+                      src="/w3images/snow.jpg"
+                      style="width: 100%"
+                      class="w3-margin-bottom"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <!-- Interests -->
+          <div class="w3-card w3-round w3-white w3-hide-small">
+            <div class="w3-container">
+              <p>Interests</p>
+              <p>
+                <span class="w3-tag w3-small w3-theme-d5">News</span>
+                <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+                <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+                <span class="w3-tag w3-small w3-theme-d2">Games</span>
+                <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+                <span class="w3-tag w3-small w3-theme">Games</span>
+                <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+                <span class="w3-tag w3-small w3-theme-l2">Food</span>
+                <span class="w3-tag w3-small w3-theme-l3">Design</span>
+                <span class="w3-tag w3-small w3-theme-l4">Art</span>
+                <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+              </p>
+            </div>
+          </div>
+          <br />
+
+          <!-- Alert Box -->
+          <div
+            class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small"
+          >
+            <span
+              onclick="this.parentElement.style.display='none'"
+              class="w3-button w3-theme-l3 w3-display-topright"
+            >
+              <i class="fa fa-remove"></i>
+            </span>
+            <p><strong>Hey!</strong></p>
+            <p>People are looking at your profile. Find out who.</p>
+          </div>
+
+          <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+          
+
+          <div class="w3-container w3-card w3-white w3-round w3-margin">
+            <br />
+            <img
+              src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+              alt="Avatar"
+              class="w3-left w3-circle w3-margin-right"
+              style="width: 60px"
+            />
+            <span class="w3-right w3-opacity">1 min</span>
+            <h4>first name last name</h4> 
+            <br />
+            <hr class="w3-clear" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="w3-row-padding" style="margin: 0 -16px">
+              <div class="w3-half">
+                <img
+                  src="https://fr.davidsuzuki.org/wp-content/uploads/sites/3/2013/05/connecter-nature.jpg"
+                  style="width: 100%"
+                  alt="Northern Lights"
+                  class="w3-margin-bottom"
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              class="w3-button w3-theme-d1 w3-margin-bottom"
+            >
+              <i class="fa fa-thumbs-up"></i>  Like
+            </button>
+            <button
+              type="button"
+              class="w3-button w3-theme-d2 w3-margin-bottom"
+            >
+              <i class="fa fa-comment"></i>  Comment
+            </button>
+          </div>
+
+          <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-col m2">
+          <div class="w3-card w3-round w3-white w3-center">
+            <div class="w3-container">
+              <p>Upcoming Events:</p>
+              <img
+                src="/w3images/forest.jpg"
+                alt="Forest"
+                style="width: 100%"
+              />
+              <p><strong>Holiday</strong></p>
+              <p>Friday 15:00</p>
+              <p>
+                <button class="w3-button w3-block w3-theme-l4">Info</button>
+              </p>
+            </div>
+          </div>
+          <br />
+
+          <div class="w3-card w3-round w3-white w3-center">
+            <div class="w3-container">
+              <p>Friend Request</p>
+              <img
+                src="/w3images/avatar6.png"
+                alt="Avatar"
+                style="width: 50%"
+              /><br />
+              <span>Jane Doe</span>
+              <div class="w3-row w3-opacity">
+                <div class="w3-half">
+                  <button
+                    class="w3-button w3-block w3-green w3-section"
+                    title="Accept"
+                  >
+                    <i class="fa fa-check"></i>
+                  </button>
+                </div>
+                <div class="w3-half">
+                  <button
+                    class="w3-button w3-block w3-red w3-section"
+                    title="Decline"
+                  >
+                    <i class="fa fa-remove"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+            <p>ADS</p>
+          </div>
+          <br />
+
+          <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+            <p><i class="fa fa-bug w3-xxlarge"></i></p>
+          </div>
+
+          <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+      </div>
+
+      <!-- End Page Container -->
+    </div>
+    <br />
+    <div class="w3-top">
+      <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+        <a
+          class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+          href="javascript:void(0);"
+          onclick="openNav()"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+          ><i class="fa fa-home w3-margin-right"></i>Logo</a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          title="News"
+          ><i class="fa fa-globe"></i
+        ></a>
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          title="Account Settings"
+          ><i class="fa fa-user"></i
+        ></a>
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          title="Messages"
+          ><i class="fa fa-envelope"></i
+        ></a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-button w3-padding-large" title="Notifications">
+            <i class="fa fa-bell"></i
+            ><span class="w3-badge w3-right w3-small w3-green">3</span>
+          </button>
+          <div
+            class="w3-dropdown-content w3-card-4 w3-bar-block"
+            style="width: 300px"
+          >
+            <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+            <a href="#" class="w3-bar-item w3-button"
+              >John Doe posted on your wall</a
+            >
+            <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+          title="My Account"
+        >
+          <img
+            src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+            class="w3-circle"
+            style="height: 23px; width: 23px"
+            alt="Avatar"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <!-- <footer class="w3-container w3-theme-d3 w3-padding-16">
+      <h5>Ujob</h5>
+    </footer> -->
+
+    <script>
+      // Accordion
+      function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d1";
+        } else {
+          x.className = x.className.replace("w3-show", "");
+          x.previousElementSibling.className = x.previousElementSibling.className.replace(
+            " w3-theme-d1",
+            ""
+          );
+        }
+      }
+
+      // Used to toggle the menu on smaller screens when clicking on the menu button
+      function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </body>
+</html>
