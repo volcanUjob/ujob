@@ -44,13 +44,13 @@ exports.display_all_posts_with_userInfo = function (req, res) {
 //   );
 // };
 
-// exports.delete_post = function (req, res) {
-//   console.log(req.params.postId);
-//   Post.deleteOne({ _id: req.params.postId }, function (err, post) {
-//     if (err) res.send(err);
-//     res.json({ message: post });
-//   });
-// };
+exports.delete_post = function (req, res) {
+  console.log(req.params.postId);
+  Post.deleteOne({ _id: req.params.postId }, function (err, post) {
+    if (err) res.send(err);
+    res.json({ message: post });
+  });
+};
 
 
 var post = require("../models/companyPostModel");
