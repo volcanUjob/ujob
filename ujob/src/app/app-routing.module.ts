@@ -21,7 +21,7 @@ import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
 import { MapComponent} from './map/map.component';
 import { ResumeUserComponent } from './resume-user/resume-user.component';
-import { ChatComponent } from './chat/chat.component';
+
 
 
 const routes: Routes = [
@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: "home-cmp",component: HomeCmpComponent},
   { path: "map", component: MapComponent },
   { path:"resume-user",component: ResumeUserComponent},
-  { path:"chat", component: ChatComponent}
+ 
 ];
 
 @NgModule({
@@ -73,6 +73,6 @@ export const routingComponents = [
   HomeCmpComponent,
   MapComponent,
   ResumeUserComponent,
-  ChatComponent
+ 
 
 ];

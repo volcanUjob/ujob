@@ -12,6 +12,9 @@ export class HomeUserComponent implements OnInit {
   pathOrigine: string = 'http://localhost:3000/';
   constructor(private httpClient: HttpClient) {}
 
+  currentFriend(friend: any) {
+    localStorage.setItem('friend', JSON.stringify(friend));
+  }
   ngOnInit(): void {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -29,8 +32,10 @@ export class HomeUserComponent implements OnInit {
   }
   onChange(event: any) {
     this.filter = this.postCmp.filter((item: any) => {
-      if (item?.posterId?.username.includes(this.name) || item.message.includes(this.name)) {
-        
+      if (
+        item?.posterId?.username.includes(this.name) ||
+        item.message.includes(this.name)
+      ) {
         return item;
       }
     });
