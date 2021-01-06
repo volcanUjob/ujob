@@ -12,9 +12,9 @@ export class EditProfileCmpComponent implements OnInit {
   editProfData = {
     image: '',
     phone: '',
-    latitude: "",
-    longitude: "",
-    googleId: ""
+    latitude: '',
+    longitude: '',
+    googleId: '',
   };
 
   constructor(private edit: EditProfUserService, private router: Router) {}
@@ -22,7 +22,7 @@ export class EditProfileCmpComponent implements OnInit {
   ngOnInit(): void {
     // this..subscribe(user=>{
     //   this.editProfData=user
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.user = JSON.parse('user' || '{}');
     console.log(this.user);
     // })
   }
