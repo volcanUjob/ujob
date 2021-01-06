@@ -83,6 +83,9 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
+                        <li>
+                          <a (click)="chat()">CHAT</a>
+                        </li>
                         <li><a routerLink="/home-user">HOME</a></li>
                         <li><a routerLink="/prof-user"> MY PROFILE</a></li>
                         <li><a routerLink="/myprofile-user"> MY RESUME</a></li>
@@ -384,6 +387,8 @@
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
+            <button class="w3-button w3-red
+            w3-right" type="button" (click)="deletePost(item)">Delete_Post</button>
             <h4>{{ user.username }}</h4>
             <br />
             <hr class="w3-clear" />

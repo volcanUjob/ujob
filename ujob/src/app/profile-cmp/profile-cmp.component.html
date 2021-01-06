@@ -216,21 +216,20 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                firstName last name 
+                {{ data.username }} 
               </p>
-              <p>
-                 <i class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"></i>
-                resume
-              </p>
+              
               <p>
                 <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
                 email
               </p>
               <p>
-                <i
-                  class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"
+                <a routerLink="/map">
+                <i 
+                class="fas fa-map-marked-alt fa-fw w3-margin-right w3-text-theme"
                 ></i>
-                job
+                Location
+              </a>
               </p>
             </div>
           </div>
@@ -356,8 +355,6 @@
 
         <!-- Middle Column -->
         <div class="w3-col m7">
-          
-
           <div class="w3-container w3-card w3-white w3-round w3-margin">
             <br />
             <img
@@ -367,7 +364,7 @@
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
-            <h4>first name last name</h4> 
+            <h4>first name last name</h4>
             <br />
             <hr class="w3-clear" />
             <p>
@@ -390,13 +387,13 @@
               type="button"
               class="w3-button w3-theme-d1 w3-margin-bottom"
             >
-              <i class="fa fa-thumbs-up"></i>  Like
+              <i class="fa fa-thumbs-up"></i> Like
             </button>
             <button
               type="button"
               class="w3-button w3-theme-d2 w3-margin-bottom"
             >
-              <i class="fa fa-comment"></i>  Comment
+              <i class="fa fa-comment"></i> Comment
             </button>
           </div>
 
