@@ -151,7 +151,9 @@
     style="width: 60px"
   />
   <span class="w3-right w3-opacity">1 min</span>
-  <h4>{{item?.posterId?.username}}</h4>
+  <h4><a (click)="currentFriend(item?.posterId)" routerLink="/profile-user">{{
+    item?.posterId?.username
+  }}</a></h4>
   <br />
   <hr class="w3-clear" />
   <p>

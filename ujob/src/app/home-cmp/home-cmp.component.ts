@@ -12,6 +12,11 @@ export class HomeCmpComponent implements OnInit {
   pathOrigine: string = 'http://localhost:3000/';
   constructor(private httpClient: HttpClient) { }
 
+  currentFriend(friend: any) {
+    localStorage.setItem('friend', JSON.stringify(friend));
+  }
+
+
   ngOnInit(): void {
     const httpOptions = {
       headers: new HttpHeaders({
