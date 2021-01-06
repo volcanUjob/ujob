@@ -83,12 +83,10 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a routerLink="/home-user">HOME</a></li>
-                        <li><a routerLink="/prof-user"> MY PROFILE</a></li>
-                        <li><a routerLink="/myprofile-user">EDIT RESUME</a></li>
-                        <li>
-                          <a routerLink="/edit-profile-user"> </a>
-                        </li>
+                        <li><a routerLink="/home-cmp">HOME</a></li>
+                        <li><a routerLink="/myprofile-cmp"> MY PROFILE</a></li>
+                        <li><a routerLink="/edit-profile-cmp">EDIT PROFILE</a></li>
+                        
                         <li>
                           <a > <button (click)="onlogout()">LOGOUT</button></a>
                         </li>
@@ -204,7 +202,7 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-              <h4 class="w3-center">username</h4>
+              <h4 class="w3-center">{{ data.username }} </h4>
               <p class="w3-center">
                 <img
                   src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
@@ -216,15 +214,19 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                firstName last name 
+                {{ data.username }} 
               </p>
               <p>
+                <a  routerLink="/resume-user">
                  <i class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"></i>
                 resume
+              </a>
               </p>
               <p>
+                
                 <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
                 email
+              
               </p>
               <p>
                 <i
