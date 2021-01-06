@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.1.0",
     "@angular/animations": "~11.0.5",
     "@angular/common": "~11.0.5",
     "@angular/compiler": "~11.0.5",
@@ -21,6 +22,7 @@
     "@angular/router": "~11.0.5",
     "angularx-social-login": "^3.5.4",
     "bootstrap": "^4.5.3",
+    "core-js": "^3.7.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
     "nodemon": "^2.0.6",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.5",
+    "@angular/language-service": "~11.0.2",
     "@angular/cli": "~11.0.5",
     "@angular/compiler-cli": "~11.0.5",
     "@types/jasmine": "~3.6.0",

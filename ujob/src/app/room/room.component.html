@@ -52,25 +52,42 @@
     <h3 class="ui center aligned header">Remote Cameras</h3>
 
     <div class="cla">
-      <img
+      <div class="video-grid">
+        <div *ngFor="let video of videos">
+          <span
+            *ngIf="video.userId !== currentUserId; else currentUserVideoLabel"
+            >{{ video.userId }}</span
+          >
+          <ng-template #currentUserVideoLabel>
+            <span></span>
+          </ng-template>
+          <video
+            class="cla"
+            [srcObject]="video.srcObject"
+            (loadedmetadata)="onLoadedMetadata($event)"
+            [muted]="video.muted"
+          ></video>
+        </div>
+      </div>
+      <!-- <img
         class="ui centered medium image"
         src="../../assets/assets/assets/imges/image.png"
-      />
+      /> -->
 
-      <img
+      <!-- <img
         class="ui centered medium image"
         src="../../assets/assets/assets/imges/image.png"
-      />
+      /> -->
 
-      <img
+      <!-- <img
         class="ui centered medium image"
         src="../../assets/assets/assets/imges/image.png"
-      />
+      /> -->
 
-      <img
+      <!-- <img
         class="ui centered medium image"
         src="../../assets/assets/assets/imges/image.png"
-      />
+      /> -->
     </div>
   </div>
 </div>

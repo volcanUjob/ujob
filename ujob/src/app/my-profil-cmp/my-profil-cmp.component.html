@@ -170,7 +170,7 @@
         title="My Account"
       >
         <img
-          src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+        src="assets/{{img}}"
           class="w3-circle"
           style="height: 23px; width: 23px"
           alt="Avatar"
@@ -207,7 +207,7 @@
               <h4 class="w3-center">{{user.username}}</h4>
               <p class="w3-center">
                 <img
-                  src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+                src="assets/{{img}}"
                   class="w3-circle"
                   style="height: 106px; width: 106px"
                   alt="Avatar"
@@ -369,34 +369,34 @@
                   <button type="submit" class="w3-button w3-theme">
                     <i class="far fa-paper-plane"></i>  Post
                   </button>
+                  <input type="file" (input)="fileChoosen($event)">
                 </form>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
+          <div class="w3-container w3-card w3-white w3-round w3-margin" *ngFor="let item of postCmp">
             <br />
             <img
-              src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+            src="assets/{{img}}"
               alt="Avatar"
               class="w3-left w3-circle w3-margin-right"
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
+            <button class="w3-button w3-red
+            w3-right" type="button" (click)="deletePost(item)">Delete_Post</button>
             <h4>{{user.username}}</h4>
             <br />
             <hr class="w3-clear" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {{item.message}}
             </p>
             <div class="w3-row-padding" style="margin: 0 -16px">
               <div class="w3-half">
                 <img
-                  src="https://fr.davidsuzuki.org/wp-content/uploads/sites/3/2013/05/connecter-nature.jpg"
+                  src={{item.imageURL}}
                   style="width: 100%"
                   alt="Northern Lights"
                   class="w3-margin-bottom"

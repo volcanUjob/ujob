@@ -69,6 +69,9 @@
                           <a routerLink="/edit-profile-user">EDIT RESUME</a>
                         </li>
                         <li>
+                          <a><button (click)="print()" > Print</button></a>
+                        </li>
+                        <li>
                           <a href="blog.html"></a>
                           <ul class="submenu">
                             <li><a href="blog.html"></a></li>
@@ -102,7 +105,7 @@
           <div class="profile-container">
             <img
               class="profile"
-              src="../../assets/assets/assets/images/profile.png"
+              src="assets/{{img}}"
               alt=""
             />
             <h1 class="name">{{user.firstName}} <br> {{user.lastName}}</h1>

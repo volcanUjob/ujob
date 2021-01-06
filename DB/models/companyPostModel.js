@@ -5,8 +5,12 @@ var companyPostSchema = new Schema({
     type: String
  
   },
-  posterId: {
+  imageURL: {
     type: String
+  },
+  posterId: {
+    type: String,
+    ref: 'user'
  
   }
 });

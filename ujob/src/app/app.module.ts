@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -31,8 +31,12 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
 import { TablePostsComponent } from './table-posts/table-posts.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
-import { ChatComponent } from './chat/chat.component';
+import { PeerComponent } from './peer/peer.component';
 import { RoomComponent } from './room/room.component';
+
+import { MapComponent } from './map/map.component';
+import { ResumeUserComponent } from './resume-user/resume-user.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -57,18 +61,26 @@ import { RoomComponent } from './room/room.component';
     HomeCmpComponent,
     ChatComponent,
     RoomComponent,
+    PeerComponent,
+    MapComponent,
+    ResumeUserComponent,
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: '',
+    }),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+
     SocketIoModule.forRoot({
       url: '/',
     }),
   ],
+
   providers: [
     AuthService,
     {
