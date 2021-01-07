@@ -101,12 +101,13 @@
         <div class="sidebar-wrapper">
           <div class="profile-container">
             <img
+            
               class="profile"
-              src=""
+              src="assets/{{data.image}}"
               alt=""
             />
             <h1 class="name"> {{data.firstName}}</h1> <br>  <h1></h1>
-            <h3 class="tagline">job</h3>
+            <h3 class="tagline">{{data.job}}</h3>
           </div>
           <!--//profile-container-->
 
@@ -114,7 +115,7 @@
             <ul class="list-unstyled contact-list">
               <li class="email">
                 <i class="fas fa-envelope"></i
-                ><a href="mailto: yourname@email.com">email</a>
+                ><a href="mailto: yourname@email.com">{{data.email}}</a>
               </li>
               <li class="phone">
                 <i class="fas fa-phone"></i

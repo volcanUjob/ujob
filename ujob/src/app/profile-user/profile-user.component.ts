@@ -10,13 +10,22 @@ export class ProfileUserComponent implements OnInit {
   isLoggedIn = false
   data: any;
   postCmp: any[] = [];
+  allpost: any;
+  posts: any = [];
+  image: any = '';
   constructor(private router: Router,private httpClient: HttpClient) { }
   currentFriend(friend: any) {
     localStorage.setItem('friend', JSON.stringify(friend));
   }
   ngOnInit(): void {
     this.data = JSON.parse(localStorage.getItem('friend') || 'hello');
-    console.log(this.data);
+    this.allpost = JSON.parse(localStorage.getItem('allposts') || 'hello');
+    var id = this.data._id;
+    for (var i = 0; i < this.allpost.length; i++) {
+      if (this.allpost[i].posterId._id === id) {
+        this.posts.push(this.allpost[i]);
+      }
+    }
   }
   onlogout() {
     this.isLoggedIn = false;
