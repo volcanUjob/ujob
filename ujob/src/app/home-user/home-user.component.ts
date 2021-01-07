@@ -35,10 +35,12 @@ export class HomeUserComponent implements OnInit {
 
   likeButtonClick() {
     this.numberOfLikes++;
+    console.log(this.numberOfLikes);
   }
 
   dislikeButtonClick() {
     this.numberOfLikes--;
+    console.log(this.numberOfLikes);
   }
 
   onChange(event: any) {

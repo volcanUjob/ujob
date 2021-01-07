@@ -36,7 +36,7 @@ import { PeerComponent } from './peer/peer.component';
 
 import { MapComponent } from './map/map.component';
 import { ResumeUserComponent } from './resume-user/resume-user.component';
-import { LikeComponent } from './like/like.component';
+
 // import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
@@ -67,7 +67,7 @@ import { LikeComponent } from './like/like.component';
 
     MapComponent,
     ResumeUserComponent,
-    LikeComponent,
+
     // ChatComponent,
   ],
   imports: [
