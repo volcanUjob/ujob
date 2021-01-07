@@ -22,7 +22,7 @@ export class EditProfileCmpComponent implements OnInit {
   ngOnInit(): void {
     // this..subscribe(user=>{
     //   this.editProfData=user
-    this.user = JSON.parse('user' || '{}');
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
     console.log(this.user);
     // })
   }
@@ -40,6 +40,7 @@ export class EditProfileCmpComponent implements OnInit {
     var obj = form.value;
     console.log(obj);
     var id = this.user._id;
+    
 
     this.edit.editProf(id, obj).subscribe(
       (res: any) => console.log(res)
