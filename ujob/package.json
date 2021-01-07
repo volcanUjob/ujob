@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.1.0",
     "@angular/animations": "~11.0.5",
     "@angular/common": "~11.0.5",
     "@angular/compiler": "~11.0.5",
@@ -20,13 +21,15 @@
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
     "angularx-social-login": "^3.5.4",
-    "@agm/core": "^1.1.0",
-    "core-js": "^3.7.0",
     "bootstrap": "^4.5.3",
+    "core-js": "^3.7.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
+    "nodemon": "^2.0.6",
     "rxjs": "~6.6.0",
+    "socket.io-client": "^3.0.4",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

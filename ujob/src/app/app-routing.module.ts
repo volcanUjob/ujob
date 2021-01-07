@@ -19,10 +19,11 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
 import { EditProfileCmpComponent } from './edit-profile-cmp/edit-profile-cmp.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeCmpComponent } from './home-cmp/home-cmp.component';
-import { MapComponent} from './map/map.component';
+import { PeerComponent } from './peer/peer.component';
+import { RoomComponent } from './room/room.component';
+
+import { MapComponent } from './map/map.component';
 import { ResumeUserComponent } from './resume-user/resume-user.component';
-
-
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,13 +41,18 @@ const routes: Routes = [
   { path: 'myprofile-cmp/:id', component: MyProfilCmpComponent },
   { path: 'table-posts', component: TablePostsComponent },
   { path: 'payme', component: PaymeComponent },
-  { path: "prof-user", component: ProfUserComponent},
-  { path: "edit-profile-cmp", component: EditProfileCmpComponent },
-  { path: "home-user",component: HomeUserComponent},
-  { path: "home-cmp",component: HomeCmpComponent},
-  { path: "map", component: MapComponent },
-  { path:"resume-user",component: ResumeUserComponent},
- 
+
+  { path: 'room/:room_id', component: RoomComponent },
+  { path: 'prof-user', component: ProfUserComponent },
+  { path: 'edit-profile-cmp', component: EditProfileCmpComponent },
+
+  { path: 'peer', component: PeerComponent },
+  { path: 'prof-user', component: ProfUserComponent },
+  { path: 'edit-profile-cmp', component: EditProfileCmpComponent },
+  { path: 'home-user', component: HomeUserComponent },
+  { path: 'home-cmp', component: HomeCmpComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'resume-user', component: ResumeUserComponent },
 ];
 
 @NgModule({
@@ -73,6 +79,6 @@ export const routingComponents = [
   HomeCmpComponent,
   MapComponent,
   ResumeUserComponent,
- 
 
+  PeerComponent,
 ];

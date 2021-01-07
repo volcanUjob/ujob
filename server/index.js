@@ -1,6 +1,6 @@
 const express = require("express");
-var multer = require('multer');
-var path = require('path');
+var multer = require("multer");
+var path = require("path");
 var appDir = path.dirname(require.main.filename);
 
 var bodyParser = require("body-parser");
@@ -161,21 +161,19 @@ app.get(
   }
 );
 
-var url="./server/uploads/"
-var localPath="http://localhost:3000/"
-var fileName='';
+var url = "./server/uploads/";
+var localPath = "http://localhost:3000/";
+var fileName = "";
 // var remotePath=""
 let storage = multer.diskStorage({
-  
   destination: (req, file, cb) => {
-
     cb(null, "./server/uploads");
   },
   filename: (req, file, cb) => {
     console.log(file);
-    
-    fileName=file.originalname
-    cb(null, file.originalname )
+
+    fileName = file.originalname;
+    cb(null, file.originalname);
   }
 });
 
@@ -184,34 +182,33 @@ let upload = multer({
 });
 
 // POST File
-app.post('/api/upload', upload.single('image'), function (req, res) {
+app.post("/api/upload", upload.single("image"), function (req, res) {
   if (!req.file) {
     console.log("No file is available!");
     return res.send({
       success: false
     });
-
   } else {
-    console.log('File is available!');
+    console.log("File is available!");
     return res.send({
-      
-      success: true, 
-      urlImage:localPath+fileName
-    })
+      success: true,
+      urlImage: localPath + fileName
+    });
   }
 });
 
-var path = require('path');
+var path = require("path");
 var appDir = path.dirname(require.main.filename);
-
 
 app.use("/", user);
 app.use("/", post);
-var publicDir = require('path').join(__dirname,'/uploads'); 
+
+// app.get("/:room", (req, res) => {
+//   res.render("room", { roomId: req.params.room });
+// });
+
+var publicDir = require("path").join(__dirname, "/uploads");
 app.use(express.static(publicDir));
-
-
-
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);
