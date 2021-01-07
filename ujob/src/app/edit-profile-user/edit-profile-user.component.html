@@ -1,0 +1,1006 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>User profile form requirement</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        padding-top: 70px;
+      }
+
+      .othertop {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header">
+        <div class="header-top d-none d-lg-block">
+          <div class="container">
+            <div class="col-xl-12">
+              <div
+                class="row d-flex justify-content-between align-items-center"
+              >
+                <div class="header-info-left">
+                  <ul>
+                    <li>
+                      <i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm
+                    </li>
+                    <li>Sun: Closed</li>
+                  </ul>
+                </div>
+                <div class="header-info-right">
+                  <ul class="header-social">
+                    <li>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-bottom header-sticky">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- Logo -->
+              <div class="col-xl-2 col-lg-2">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="../../assets/assets/img/logo/logo222.png" alt=""
+                  /></a>
+                </div>
+              </div>
+              <div class="col-xl-10 col-lg-10">
+                <div
+                  class="menu-wrapper d-flex align-items-center justify-content-end"
+                >
+                  <!-- Main-menu -->
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a routerLink="/home-user">HOME</a></li>
+                        <li><a routerLink="/prof-user"> MY PROFILE</a></li>
+                        <li><a routerLink="/myprofile-user"> MY RESUME</a></li>
+                        <li>
+                          <a routerLink="/edit-profile-user">EDIT RESUME</a>
+                        </li>
+                        <li>
+                          <a href="blog.html"></a>
+                          <ul class="submenu">
+                            <li><a href="blog.html"></a></li>
+                            <li>
+                              <a href="blog_details.html"></a>
+                            </li>
+                            <li><a href="elements.html"></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="contact.html"></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+  </header>
+  <body>
+    <div class="container container1">
+      <div class="row">
+        <div class="col-md-10">
+          <form
+            class="form-horizontal"
+            #prof="ngForm"
+            (ngSubmit)="editProf(prof)"
+          >
+            <fieldset>
+              <!-- Form Name -->
+              <legend>User profile form requirement</legend>
+              <div>
+                <!-- Text input-->
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="First Name"
+                    >First Name
+                  </label>
+
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"> </i>
+                      </div>
+                      <input
+                        ngModel
+                        id="firstName"
+                        name="firstName"
+                        type="text"
+                        placeholder="First Name"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Last Name"
+                    >Last Name
+                  </label>
+
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"> </i>
+                      </div>
+                      <input
+                        ngModel
+                        id="lastName"
+                        name="lastName"
+                        type="text"
+                        placeholder="Last Name"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Primary Occupation"
+                    >Primary Occupation
+                  </label>
+
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-briefcase"> </i>
+                      </div>
+                      <input
+                        ngModel
+                        id="Job"
+                        name="job"
+                        type="text"
+                        placeholder="Primary Occupation"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label class="col-md-4 control-label" for="email"
+                    >Email
+                  </label>
+
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-at"> </i>
+                      </div>
+                      <input
+                        ngModel
+                        id="email"
+                        name="email"
+                        type="text"
+                        placeholder="Primary Occupation"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Latitude "
+                    >Latitude
+                  </label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="latitude"
+                        name="latitude"
+                        type="text"
+                        placeholder="Latitude "
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Longitude "
+                    >Longitude
+                  </label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="longitude"
+                        name="longitude"
+                        type="text"
+                        placeholder="Longitude "
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Phone number "
+                    >Phone number
+                  </label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="phone"
+                        name="phone"
+                        type="text"
+                        placeholder="Phone number "
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- File Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Upload photo"
+                    >Upload photo</label
+                  >
+                  <div class="col-md-4">
+                    <input
+                      ngModel
+                      (change)="onSelectImage($event)"
+                      type="file"
+                      id="image"
+                      name="image"
+                      class="input-file"
+                      
+                    />
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Your Web Site"
+                    >Web Site</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-globe"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="webSite"
+                        name="webSite"
+                        type="text"
+                        placeholder="Web Site"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Your Github"
+                    >Your Github</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fab fa-github" style="font-size: 20px"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="github"
+                        name="github"
+                        type="text"
+                        placeholder="Your Github"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Your Twittre"
+                    >Your Twittre</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i
+                          class="fab fa-twitter-square"
+                          style="font-size: 20px"
+                        ></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="twittre"
+                        name="twitter"
+                        type="text"
+                        placeholder="Your Twittre"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Multiple Radios (inline) -->
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="University Diploma"
+                    >University Diploma</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-graduation-cap"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="diploma"
+                        name="diploma"
+                        type="text"
+                        placeholder="University Diploma"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="SchoolName"
+                    >School Name</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-school"></i>
+                      </div>
+                      <input
+                        ngModel
+                        id="School"
+                        name="School"
+                        type="text"
+                        placeholder="School Name"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Date">Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="dateSc"
+                        name="ateSc"
+                        type="text"
+                        placeholder="Date"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Languages"
+                    >Languages Known</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-language"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="language1"
+                        name="language1"
+                        type="text"
+                        placeholder="Language"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Languages"></label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-language"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="language2"
+                        name="language2"
+                        type="text"
+                        placeholder="Language"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Languages"></label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-language"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="language3"
+                        name="language3"
+                        type="text"
+                        placeholder="Language"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+
+                <!-- Multiple Checkboxes -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Interests"
+                    >Interests
+                  </label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-sticky-note-o"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="interest1"
+                        name="interest1"
+                        type="text"
+                        placeholder="Interest"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Interests"></label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-sticky-note-o"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="interest2"
+                        name="interest2"
+                        type="text"
+                        placeholder="Interest"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Interests"></label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-sticky-note-o"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="interest3"
+                        name="interest3"
+                        type="text"
+                        placeholder="Interest"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+
+                <!-- Multiple Radios -->
+
+                <!-- Textarea -->
+                <div class="form-group">
+                  <label
+                    class="col-md-4 control-label"
+                    for="Career Profile (max 200 words)"
+                    >Career Profile (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                    ngModel
+                      class="form-control"
+                      rows="10"
+                      id="careerProfile"
+                      name="careerProfile"
+                    >
+Career Profile</textarea
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Experiences Job"
+                    >Experiences Job</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-briefcase"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceJob1"
+                        name="experienceJob1"
+                        type="text"
+                        placeholder="Experiences Job"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Place"
+                    >Place</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experiencePlace1"
+                        name="experiencePlace1"
+                        type="text"
+                        placeholder="Place"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Date">Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceDate1"
+                        name="experienceDate1"
+                        type="text"
+                        placeholder="Date"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                  ngModel
+                    class="col-md-4 control-label"
+                    for="About Your Experience (max 200 words)"
+                    >About Your Experience (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                      class="form-control"
+                      rows="10"
+                      id="experience1"
+                      name="experience1"
+                    >
+About Your Experience</textarea
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Experiences Job"
+                    >Experiences Job</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-briefcase"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceJob2"
+                        name="experienceJob2"
+                        type="text"
+                        placeholder="Experiences Job"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Place"
+                    >Place</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experiencePlace2"
+                        name="experiencePlace2"
+                        type="text"
+                        placeholder="Place"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Date">Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceDate2"
+                        name="experienceDate2"
+                        type="text"
+                        placeholder="Date"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                  
+                    class="col-md-4 control-label"
+                    for="About Your Experience (max 200 words)"
+                    >About Your Experience (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                    ngModel
+                      class="form-control"
+                      rows="10"
+                      id="experience2"
+                      name="experience2"
+                    >
+About Your Experience</textarea
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Experiences Job"
+                    >Experiences Job</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-briefcase"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceJob3"
+                        name="experienceJob3"
+                        type="text"
+                        placeholder="Experiences Job"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Place"
+                    >Place</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experiencePlace3"
+                        name="experiencePlace3"
+                        type="text"
+                        placeholder="Place"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Date">Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="experienceDate3"
+                        name="experienceDate3"
+                        type="text"
+                        placeholder="Date"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                    class="col-md-4 control-label"
+                    for="About Your Experience (max 200 words)"
+                    >About Your Experience (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                    ngModel
+                      class="form-control"
+                      rows="10"
+                      id="experience3"
+                      name="experience3"
+                    >
+About Your Experience</textarea
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Projects"
+                    >Project</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="project1"
+                        name="project1"
+                        type="text"
+                        placeholder="Project"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label
+                    class="col-md-4 control-label"
+                    for="About Project (max 200 words)"
+                    >About Project (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                    ngModel
+                      class="form-control"
+                      rows="10"
+                      id="aboutProject1"
+                      name="aboutProject1"
+                    >
+About Project</textarea
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="Projects"
+                    >Project</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="project2"
+                        name="project2"
+                        type="text"
+                        placeholder="Project"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label
+                    class="col-md-4 control-label"
+                    for="About Project (max 200 words)"
+                    >About Project (max 200 words)</label
+                  >
+                  <div class="col-md-4">
+                    <textarea
+                    ngModel
+                      class="form-control"
+                      rows="10"
+                      id="aboutProject2"
+                      name="aboutProject2"
+                    >
+About Project</textarea
+                    >
+                  </div>
+                </div>
+
+               
+              
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="skills"
+                    >Skill</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="skill1"
+                        name="skill1"
+                        type="text"
+                        placeholder="Skill"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="skills"
+                    >Skill</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="skill2"
+                        name="skill2"
+                        type="text"
+                        placeholder="Skill"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="skills"
+                    >Skill</label
+                  >
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fas fa-project-diagram"></i>
+                      </div>
+                      <input
+                      ngModel
+                        id="skill3"
+                        name="skill3"
+                        type="text"
+                        placeholder="Skill"
+                        class="form-control input-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-4">
+                    <button type="submit"  class="btn btn-success"
+                   
+                      ><span class="glyphicon glyphicon-thumbs-up"></span>
+                      Submit</button
+                    >
+                    <a href="#" class="btn btn-danger" value=""
+                      ><span class="glyphicon glyphicon-remove-sign"></span>
+                      Clear</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
