@@ -207,7 +207,7 @@
               <h4 class="w3-center"></h4>
               <p class="w3-center">
                 <img
-                src="assets/{{data.img}}"
+                  src="assets/{{ data.image }}"
                   class="w3-circle"
                   style="height: 106px; width: 106px"
                   alt="Avatar"
@@ -216,20 +216,20 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                {{ data.username }} 
+                {{ data.username }}
               </p>
-              
+
               <p>
                 <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
-                {{data.email}}
+                {{ data.email }}
               </p>
               <p>
                 <a routerLink="/map">
-                <i 
-                class="fas fa-map-marked-alt fa-fw w3-margin-right w3-text-theme"
-                ></i>
-                Location
-              </a>
+                  <i
+                    class="fas fa-map-marked-alt fa-fw w3-margin-right w3-text-theme"
+                  ></i>
+                  Location
+                </a>
               </p>
             </div>
           </div>
@@ -354,29 +354,26 @@
         </div>
 
         <!-- Middle Column -->
-        <div class="w3-col m7">
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <div class="w3-col m7" >
+          <div class="w3-container w3-card w3-white w3-round w3-margin" *ngFor="let item of posts">
             <br />
             <img
-            src="assets/{{data.img}}"
+              src="assets/{{ data.image }}"
               alt="Avatar"
               class="w3-left w3-circle w3-margin-right"
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
-            <h4> {{ data.username }} </h4>
+            <h4>{{ data.username }}</h4>
             <br />
             <hr class="w3-clear" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {{ item.message }}
             </p>
             <div class="w3-row-padding" style="margin: 0 -16px">
               <div class="w3-half">
                 <img
-                  src="https://fr.davidsuzuki.org/wp-content/uploads/sites/3/2013/05/connecter-nature.jpg"
+                  src="{{ item.imageURL }}"
                   style="width: 100%"
                   alt="Northern Lights"
                   class="w3-margin-bottom"
