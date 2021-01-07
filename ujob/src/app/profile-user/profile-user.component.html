@@ -85,10 +85,12 @@
                       <ul id="navigation">
                         <li><a routerLink="/home-cmp">HOME</a></li>
                         <li><a routerLink="/myprofile-cmp"> MY PROFILE</a></li>
-                        <li><a routerLink="/edit-profile-cmp">EDIT PROFILE</a></li>
-                        
                         <li>
-                          <a > <button (click)="onlogout()">LOGOUT</button></a>
+                          <a routerLink="/edit-profile-cmp">EDIT PROFILE</a>
+                        </li>
+
+                        <li>
+                          <a> <button (click)="onlogout()">LOGOUT</button></a>
                         </li>
                         <li>
                           <a href="blog.html"></a>
@@ -202,10 +204,10 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-              <h4 class="w3-center">{{ data.username }} </h4>
+              <h4 class="w3-center">{{ data.username }}</h4>
               <p class="w3-center">
                 <img
-                  src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+                  src="assets/{{ data.image }}"
                   class="w3-circle"
                   style="height: 106px; width: 106px"
                   alt="Avatar"
@@ -214,19 +216,19 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                {{ data.username }} 
+                {{ data.username }}
               </p>
               <p>
-                <a  routerLink="/resume-user">
-                 <i class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"></i>
-                resume
-              </a>
+                <a routerLink="/resume-user">
+                  <i
+                    class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"
+                  ></i>
+                  resume
+                </a>
               </p>
               <p>
-                
                 <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
                 email
-              
               </p>
               <p>
                 <i
@@ -358,30 +360,25 @@
 
         <!-- Middle Column -->
         <div class="w3-col m7">
-          
-
-          <div class="w3-container w3-card w3-white w3-round w3-margin">
+          <div class="w3-container w3-card w3-white w3-round w3-margin"  *ngFor="let item of posts">
             <br />
             <img
-              src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
+              src="assets/{{ data.image }}"
               alt="Avatar"
               class="w3-left w3-circle w3-margin-right"
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
-            <h4>first name last name</h4> 
+            <h4>{{ data.username }}</h4>
             <br />
             <hr class="w3-clear" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {{ item.message }}
             </p>
             <div class="w3-row-padding" style="margin: 0 -16px">
               <div class="w3-half">
                 <img
-                  src="https://fr.davidsuzuki.org/wp-content/uploads/sites/3/2013/05/connecter-nature.jpg"
+                src="{{ item.imageURL }}"
                   style="width: 100%"
                   alt="Northern Lights"
                   class="w3-margin-bottom"
@@ -392,13 +389,13 @@
               type="button"
               class="w3-button w3-theme-d1 w3-margin-bottom"
             >
-              <i class="fa fa-thumbs-up"></i>  Like
+              <i class="fa fa-thumbs-up"></i> Like
             </button>
             <button
               type="button"
               class="w3-button w3-theme-d2 w3-margin-bottom"
             >
-              <i class="fa fa-comment"></i>  Comment
+              <i class="fa fa-comment"></i> Comment
             </button>
           </div>
 
