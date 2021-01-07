@@ -152,7 +152,7 @@
     >
       <br />
       <img
-        src={{item?.img}}.
+        src="{{ item?.img }}."
         alt="Avatar"
         class="w3-left w3-circle w3-margin-right"
         style="width: 60px"
@@ -178,9 +178,35 @@
           />
         </div>
       </div>
-      <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
+
+      <!-- <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
         <i class="fa fa-thumbs-up"></i>  Like
-      </button>
+      </button> -->
+      <div class="container">
+        <div class="row">
+          <p class="col">{{ numberOfLikes }}</p>
+          <!-- <button class="col btn btn-success" (click)="likeButtonClick()">
+            Like
+          </button> -->
+          <button
+            type="button"
+            class="w3-button w3-theme-d1 w3-margin-bottom"
+            (click)="likeButtonClick()"
+          >
+            <i class="fa fa-thumbs-up"></i>  Like
+          </button>
+          <!-- <button class="col btn btn-danger" (click)="dislikeButtonClick()">
+            Dislike
+          </button> -->
+          <button
+            type="button"
+            class="w3-button w3-theme-d1 w3-margin-bottom"
+            (click)="dislikeButtonClick()"
+          >
+            <i class="fa fa-thumbs-down"></i> Dislike
+          </button>
+        </div>
+      </div>
       <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
         <i class="fa fa-comment"></i>  Comment
       </button>

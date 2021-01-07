@@ -30,6 +30,17 @@ export class HomeUserComponent implements OnInit {
         console.log(this.postCmp);
       });
   }
+
+  numberOfLikes: number = 0;
+
+  likeButtonClick() {
+    this.numberOfLikes++;
+  }
+
+  dislikeButtonClick() {
+    this.numberOfLikes--;
+  }
+
   onChange(event: any) {
     this.filter = this.postCmp.filter((item: any) => {
       if (
