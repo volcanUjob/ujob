@@ -11,6 +11,8 @@ import { UserService } from '../services/user.service.service';
 export class MyProfilUserComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('user') || '{}');
   img : any
+  isLoggedIn = false;
+  router: any;
   constructor(private _http: HttpClient, private userService: UserService) {}
 
   ngOnInit(): void {
@@ -34,5 +36,11 @@ export class MyProfilUserComponent implements OnInit {
   }
   print(){
     window.print()
+  }
+  onlogout() {
+    this.isLoggedIn = false;
+    localStorage['login_status'] = '0';
+    localStorage.clear();
+    this.router.navigate(['/login-user']);
   }
 }
