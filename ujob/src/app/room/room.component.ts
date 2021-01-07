@@ -27,6 +27,7 @@ export class RoomComponent implements OnInit {
     const myPeer = new Peer(this.currentUserId, {
       host: '/',
       port: 3003,
+      secure: false,
     });
 
     this.route.params.subscribe((params) => {
