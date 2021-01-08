@@ -2,7 +2,11 @@
   <title>ujob</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link
+    href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <link
     rel="stylesheet"
@@ -64,8 +68,11 @@
               title="Edit RESUME"
               ><i class="fas fa-user-edit"></i
             ></a>
-
-          
+            <a
+            href="http://localhost:5000/"
+            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            title="Chat"
+            ><i class="far fa-comments"></i></a>
           </div>
         </div>
         <!--  -->
@@ -73,20 +80,23 @@
     </div>
     <!-- Header End -->
   </header>
-<br>
-<br>
+ 
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   <div class="container">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h1>Search Form Post</h1>
-        </div>
+        <div class="col-md-6 col-md-offset-3"></div>
       </div>
       <div class="row" class="container">
         <div class="col-md-4 col-md-offset-3">
           <form action="" class="search-form">
             <div class="form-group has-feedback">
-              <label for="search" class="sr-only">Search</label>
+              <label for="search" class="sr-only">Search </label>
+
               <input
                 [(ngModel)]="name"
                 type="text"
@@ -96,9 +106,6 @@
                 (ngModelChange)="onChange($event)"
                 placeholder="search"
               />
-              <span
-                class="glyphicon glyphicon-search form-control-feedback"
-              ></span>
             </div>
           </form>
         </div>
@@ -117,11 +124,11 @@
         style="width: 60px"
       />
 
-      <span class="w3-right w3-opacity">1 min</span>
+      <span class="w3-right w3-opacity">22 min</span>
       <h4>
-        <a (click)="currentFriend(item?.posterId)" routerLink="/profile-cmp">{{
-          item?.posterId?.username
-        }}</a>
+        <a (click)="currentFriend(item?.posterId)" routerLink="/profile-cmp"
+          ><strong>{{ item?.posterId?.username }}</strong></a
+        >
       </h4>
       <br />
       <hr class="w3-clear" />
@@ -161,23 +168,28 @@
           <!-- <button class="col btn btn-success" (click)="likeButtonClick()">
             Like
           </button> -->
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-            <i class="fa fa-comment"></i>  Comment
-          </button>
-          <button
-            type="button"
-            class="w3-button w3-theme-d1 w3-margin-bottom"
-            (click)="likeButtonClick()"
-          >
-            <i class="fa fa-thumbs-up"></i>  Like
-          </button>
-          <button
-            type="button"
-            class="w3-button w3-theme-d1 w3-margin-bottom"
-            (click)="dislikeButtonClick()"
-          >
-            <i class="fa fa-thumbs-down"></i> Dislike
-          </button>
+          <div class="container">
+            <button
+              type="button"
+              class="w3-button w3-theme-d1 w3-margin-bottom"
+              (click)="likeButtonClick()"
+            >
+              <i class="fa fa-thumbs-up"></i>  Like
+            </button>
+            <button
+              type="button"
+              class="w3-button w3-theme-d1 w3-margin-bottom"
+              (click)="dislikeButtonClick()"
+            >
+              <i class="fa fa-thumbs-down"></i> Dislike
+            </button>
+            <button
+              type="button"
+              class="w3-button w3-theme-d2 w3-margin-bottom"
+            >
+              <i class="fa fa-comment"></i>  Comment
+            </button>
+          </div>
         </div>
       </div>
     </div>
