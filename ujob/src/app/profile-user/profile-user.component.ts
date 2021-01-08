@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-profile-user',
   templateUrl: './profile-user.component.html',
-  styleUrls: ['./profile-user.component.scss']
+  styleUrls: ['./profile-user.component.scss'],
 })
 export class ProfileUserComponent implements OnInit {
   isLoggedIn = false;
@@ -19,7 +19,13 @@ export class ProfileUserComponent implements OnInit {
   ngOnInit(): void {
     this.data = JSON.parse(localStorage.getItem('friend') || 'hello');
 
+    console.log(
+      'hhhhhhhhhhhhhhhhhhhh',
+      localStorage.getItem('friend' || 'string')
+    );
+    
     this.allpost = JSON.parse(localStorage.getItem('allposts') || 'hello');
+    // console.log(JSON.parse(localStorage.getItem('allposts') || '{}'));
 
     var id = this.data._id;
 
