@@ -75,78 +75,12 @@
       </div>
     </div>
 
-  <!-- <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-      <a
-        class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
-        href="javascript:void(0);"
-        onclick="openNav()"
-        ><i class="fa fa-bars"></i
-      ></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
-        ><i class="fa fa-home w3-margin-right"></i>Logo</a
-      >
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        title="News"
-        ><i class="fa fa-globe"></i
-      ></a>
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        title="Account Settings"
-        ><i class="fa fa-user"></i
-      ></a>
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        title="Messages"
-        ><i class="fa fa-envelope"></i
-      ></a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-button w3-padding-large" title="Notifications">
-          <i class="fa fa-bell"></i
-          ><span class="w3-badge w3-right w3-small w3-green">3</span>
-        </button>
-        <div
-          class="w3-dropdown-content w3-card-4 w3-bar-block"
-          style="width: 300px"
-        >
-          <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-          <a href="#" class="w3-bar-item w3-button"
-            >John Doe posted on your wall</a
-          >
-          <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
-        </div>
-      </div>
-      <a
-        href="#"
-        class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
-        title="My Account"
-      >
-        <img
-          src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
-          class="w3-circle"
-          style="height: 23px; width: 23px"
-          alt="Avatar"
-        />
-      </a>
-    </div>
-  </div> -->
+  
   <body class="w3-theme-l5">
     <!-- Navbar -->
 
     <!-- Navbar on small screens -->
-    <div
-      id="navDemo"
-      class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large"
-    >
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-    </div>
+    
 
     <!-- Page Container -->
     <div
@@ -160,7 +94,7 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-              <h4 class="w3-center">{{ data.username }}</h4>
+              <h4 class="w3-center"><strong>{{ data.username }}</strong></h4>
               <p class="w3-center">
                 <img
                   src="assets/{{ data.image }}"
@@ -172,25 +106,25 @@
               <hr />
               <p>
                 <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
-                {{ data.username }}
+                <strong>{{ data.firstName }}{{" "}}{{ data.lastName }}</strong>
               </p>
               <p>
                 <a routerLink="/resume-user">
                   <i
                     class="fas fa-poll-h fa-fw w3-margin-right w3-text-theme"
                   ></i>
-                  resume
+                  <strong>resume</strong>
                 </a>
               </p>
               <p>
                 <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
-                email
+                <strong>{{ data.email }}</strong>
               </p>
               <p>
                 <i
                   class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"
                 ></i>
-                job
+                <strong>{{ data.job }}</strong>
               </p>
             </div>
           </div>
@@ -199,79 +133,13 @@
           <!-- Accordion -->
           <div class="w3-card w3-round">
             <div class="w3-white">
-              <button
-                onclick="myFunction('Demo1')"
-                class="w3-button w3-block w3-theme-l1 w3-left-align"
-              >
-                <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My
-                Groups
-              </button>
               <div id="Demo1" class="w3-hide w3-container">
                 <p>Some text..</p>
               </div>
-              <button
-                onclick="myFunction('Demo2')"
-                class="w3-button w3-block w3-theme-l1 w3-left-align"
-              >
-                <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My
-                Events
+
+              <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                <i class="fa fa-users fa-fw w3-margin-right"></i> His Friends
               </button>
-              <div id="Demo2" class="w3-hide w3-container">
-                <p>Some other text..</p>
-              </div>
-              <button
-                onclick="myFunction('Demo3')"
-                class="w3-button w3-block w3-theme-l1 w3-left-align"
-              >
-                <i class="fa fa-users fa-fw w3-margin-right"></i> My Photos
-              </button>
-              <div id="Demo3" class="w3-hide w3-container">
-                <div class="w3-row-padding">
-                  <br />
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/lights.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/nature.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/mountains.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/forest.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/nature.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                  <div class="w3-half">
-                    <img
-                      src="/w3images/snow.jpg"
-                      style="width: 100%"
-                      class="w3-margin-bottom"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <br />
@@ -279,7 +147,7 @@
           <!-- Interests -->
           <div class="w3-card w3-round w3-white w3-hide-small">
             <div class="w3-container">
-              <p>Interests</p>
+              <p><strong>Interests</strong></p>
               <p>
                 <span class="w3-tag w3-small w3-theme-d5">News</span>
                 <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
@@ -297,6 +165,7 @@
           </div>
           <br />
 
+
           <!-- Alert Box -->
           <div
             class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small"
@@ -305,7 +174,7 @@
               onclick="this.parentElement.style.display='none'"
               class="w3-button w3-theme-l3 w3-display-topright"
             >
-              <i class="fa fa-remove"></i>
+            <i class="far fa-eye"></i>
             </span>
             <p><strong>Hey!</strong></p>
             <p>People are looking at your profile. Find out who.</p>
@@ -324,8 +193,8 @@
               class="w3-left w3-circle w3-margin-right"
               style="width: 60px"
             />
-            <span class="w3-right w3-opacity">1 min</span>
-            <h4>{{ data.username }}</h4>
+            <span class="w3-right w3-opacity">16 min</span>
+            <h4><strong>{{ data.username }}</strong></h4>
             <br />
             <hr class="w3-clear" />
             <p>
@@ -362,30 +231,14 @@
         <div class="w3-col m2">
           <div class="w3-card w3-round w3-white w3-center">
             <div class="w3-container">
-              <p>Upcoming Events:</p>
+              <p>User Request</p>
               <img
-                src="/w3images/forest.jpg"
-                alt="Forest"
-                style="width: 100%"
-              />
-              <p><strong>Holiday</strong></p>
-              <p>Friday 15:00</p>
-              <p>
-                <button class="w3-button w3-block w3-theme-l4">Info</button>
-              </p>
-            </div>
-          </div>
-          <br />
-
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Friend Request</p>
-              <img
-                src="/w3images/avatar6.png"
-                alt="Avatar"
+                src="assets/T018HGH817G-U018VUU6LKU-8f17e8fb5b98-512.jpg"
+               
                 style="width: 50%"
-              /><br />
-              <span>Jane Doe</span>
+              />
+              <p><strong>Ahmed Rafrafi</strong></p>
+              
               <div class="w3-row w3-opacity">
                 <div class="w3-half">
                   <button
@@ -400,7 +253,38 @@
                     class="w3-button w3-block w3-red w3-section"
                     title="Decline"
                   >
-                    <i class="fa fa-remove"></i>
+                  <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="w3-card w3-round w3-white w3-center">
+            <div class="w3-container">
+              <p>Company Request</p>
+              <img
+                src="assets/download.png"
+                
+                style="width: 50%"
+              /><br />
+              <p><strong>TUNISAIR</strong></p>
+              <div class="w3-row w3-opacity">
+                <div class="w3-half">
+                  <button
+                    class="w3-button w3-block w3-green w3-section"
+                    title="Accept"
+                  >
+                    <i class="fa fa-check"></i>
+                  </button>
+                </div>
+                <div class="w3-half">
+                  <button
+                    class="w3-button w3-block w3-red w3-section"
+                    title="Decline"
+                  >
+                  <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
@@ -426,65 +310,7 @@
       <!-- End Page Container -->
     </div>
     <br />
-    <div class="w3-top">
-      <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-        <a
-          class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
-          href="javascript:void(0);"
-          onclick="openNav()"
-          ><i class="fa fa-bars"></i
-        ></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
-          ><i class="fa fa-home w3-margin-right"></i>Logo</a
-        >
-        <a
-          href="#"
-          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-          title="News"
-          ><i class="fa fa-globe"></i
-        ></a>
-        <a
-          href="#"
-          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-          title="Account Settings"
-          ><i class="fa fa-user"></i
-        ></a>
-        <a
-          href="#"
-          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-          title="Messages"
-          ><i class="fa fa-envelope"></i
-        ></a>
-        <div class="w3-dropdown-hover w3-hide-small">
-          <button class="w3-button w3-padding-large" title="Notifications">
-            <i class="fa fa-bell"></i
-            ><span class="w3-badge w3-right w3-small w3-green">3</span>
-          </button>
-          <div
-            class="w3-dropdown-content w3-card-4 w3-bar-block"
-            style="width: 300px"
-          >
-            <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-            <a href="#" class="w3-bar-item w3-button"
-              >John Doe posted on your wall</a
-            >
-            <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
-          </div>
-        </div>
-        <a
-          href="#"
-          class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
-          title="My Account"
-        >
-          <img
-            src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
-            class="w3-circle"
-            style="height: 23px; width: 23px"
-            alt="Avatar"
-          />
-        </a>
-      </div>
-    </div>
+  
     <!-- Footer -->
     <!-- <footer class="w3-container w3-theme-d3 w3-padding-16">
       <h5>Ujob</h5>
