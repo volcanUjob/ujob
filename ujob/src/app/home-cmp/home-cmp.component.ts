@@ -28,6 +28,7 @@ export class HomeCmpComponent implements OnInit {
       .get(this.pathOrigine + 'postUserInfo', httpOptions)
       .subscribe((data: any) => {
         this.postCmp.push(...data);
+        localStorage.setItem('allposts', JSON.stringify(this.postCmp));
         this.filter.push(...data);
         for (var i = 0; i < this.filter.length; i++) {
           var x = this.filter[i].posterId.image.toString().split('');

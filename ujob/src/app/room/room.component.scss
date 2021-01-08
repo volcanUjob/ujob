@@ -9,11 +9,18 @@
   width: 200px;
   margin-left: 60%;
 }
-img{
-  width: 120px
+img {
+  width: 120px;
 }
 video {
   width: 600px;
   border-radius: 25px;
   margin-left: 20%;
+}
+
+.btn-primary {
+  color: hsl(0deg 0% 100%);
+  background-color: hsl(201deg 23% 59%);
+  border-color: hsl(208deg 44% 30%);
+  margin-left: 45%;
 }
