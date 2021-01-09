@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   rel="stylesheet"
@@ -64,7 +65,7 @@
               <!-- Logo -->
               <div class="col-xl-2 col-lg-2">
                 <div class="logo">
-                  <a routerLink=""
+                  <a href="index.html"
                     ><img src="../../assets/assets/img/logo/logo222.png" alt=""
                   /></a>
                 </div>
@@ -107,79 +108,61 @@
     </div>
     <!-- Header End -->
   </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 mx-auto">
-        <div id="first">
-          <div class="myform form">
-            <div class="logo mb-3">
-              <div class="col-md-12 text-center">
-                <h1>Login</h1>
-              </div>
+  <main>
+    <div class="categories-area section-padding30">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-70">
+              <span>Our Top Services</span>
+              <h2>Our Best Services</h2>
             </div>
-            <form action="" method="post" name="login">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Name Of The Company</label>
-                <input
-                  [(ngModel)]="loginCompanyData.username"
-                  type="text"
-                  name="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter name of the company"
-                />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cat text-center mb-50">
+              <div class="cat-icon">
+                <span class="far fa-comments"></span>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Password</label>
-                <input
-                  [(ngModel)]="loginCompanyData.password"
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter Password"
-                />
-              </div>
-
-              <div class="col-md-12 text-center">
-                <button
-                  (click)="loginCompany()"
-                  type="submit"
-                  class="btn btn-block mybtn btn-primary tx-tfm login"
-                >
-                  Login
-                </button>
-              </div>
-              <br />
-              <div class="col-md-12 text-center">
-                <button
-                  type="submit"
-                  class="btn btn-block mybtn btn-primary tx-tfm login"
-                  routerLink="/sign-cmp"
-                >
-                  Sign Up
-                </button>
-              </div>
-              <div class="col-md-12">
-                <div class="login-or">
-                  <hr class="hr-or" />
-                  <span class="span-or">or</span>
-                </div>
-              </div>
-              <div class="col-md-12 mb-3">
-                <p class="text-center">
-                  <a href="javascript:void();" class="google btn mybtn"
-                    ><i class="fa fa-google-plus"> </i> Signup using Google
-                  </a>
+              <br>
+              
+              
+              <div class="cat-cap">
+                <h5>
+                  <a href="http://localhost:1000/" target="_blank"
+                    >FOR CHAT MESSAGE</a
+                  >
+                </h5>
+                <p>
+                  
                 </p>
               </div>
-            </form>
+            </div>
           </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cat text-center mb-50">
+              <div class="cat-icon">
+                <span class="fas fa-headset"></span>
+              </div>
+              <br>
+             
+              <div class="cat-cap">
+                <h5>
+                  <a  href="http://localhost:5005/" target="_blank"
+                    > FOR CHAT VIDEO </a
+                  >
+                </h5>
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+         
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </html>
