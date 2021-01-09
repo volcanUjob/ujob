@@ -27,11 +27,17 @@ button {
   transform: translate(-50%, -50%);
   color: black;
 }
-p {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+// p {
+//   margin: 0;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   -ms-transform: translate(-50%, -50%);
+//   transform: translate(-50%, -50%);
+// }
+
+.btn-primary {
+  color: hsl(0deg 0% 100%);
+  background-color: hsl(201deg 23% 59%);
+  border-color: hsl(208deg 44% 30%);
 }
