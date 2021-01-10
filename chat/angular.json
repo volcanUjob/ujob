@@ -64,7 +64,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "chat:build","port":5000
+            "browserTarget": "chat:build","port":1000
           },
           "configurations": {
             "production": {

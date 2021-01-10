@@ -36,6 +36,8 @@ import { PeerComponent } from './peer/peer.component';
 
 import { MapComponent } from './map/map.component';
 import { ResumeUserComponent } from './resume-user/resume-user.component';
+import { LoginRoomComponent } from './login-room/login-room.component';
+import { CmpRoomComponent } from './cmp-room/cmp-room.component';
 
 // import { ChatComponent } from './chat/chat.component';
 
@@ -67,6 +69,8 @@ import { ResumeUserComponent } from './resume-user/resume-user.component';
 
     MapComponent,
     ResumeUserComponent,
+    LoginRoomComponent,
+    CmpRoomComponent,
 
     // ChatComponent,
   ],
