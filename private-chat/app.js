@@ -33,7 +33,7 @@ io.on('connection', function(socket){
         var new_room = ("" + Math.random()).substring(2, 7);
         rooms.push(new_room);
         data.roomCode = new_room;
-        data.msg='New room created, invite frndz using this ID:' + new_room;
+        data.msg='New room created, invite friends using this ID:' + new_room;
         socket.emit('update-chat', data);
         socket.emit('room-created', data);
     });

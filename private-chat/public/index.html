@@ -4,7 +4,7 @@
     <title>Title</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font: 13px Helvetica, Arial; }
+        body { font: 13px Helvetica, Arial;}
         form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
         form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
         form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
@@ -22,10 +22,72 @@
 
     <script src="./javascripts/client.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body cz-shortcut-listen="true" ng-controller='AppCtrl'>
+<title>ujob</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Open+Sans"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Open Sans", sans-serif;
+  }
+</style>
+
+  
+  <div class="header-area">
+    <div class="main-header">
+      <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+            href="javascript:void(0);"
+            onclick="openNav()"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <a
+            
+            title="Home"
+            class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+            ><i class="fab fa-facebook-messenger"></i>Ujob</a
+          >
+         
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<body cz-shortcut-listen="true" ng-controller='AppCtrl' >
 <i class="fa fa-spin fa-refresh fa-5x" id="loader" style="display: none;"></i>
 <div class="container ng-scope">
-    <h2>Private Chat Application</h2>
+    <h2>Private Chat</h2>
     <hr>
     <div class="row">
         <div class="col-lg-4 ">
@@ -53,12 +115,13 @@
                 <div ng-repeat="user in users" class="col-sm-12 ng-scope">
                     <div class="row" ng-if="user">
                         <div class="col-xs-2" ng-class="{'col-xs-push-10' : (user.username == curtrentUser)}">
-                            <img ng-src=" {{user.image}} " class="img-thumbnail img-responsive img-circle pull-left " ng-class-even="pull-right
-								" ng-class-odd="pull-left" style="width:70px; ">
+                            <!-- <img ng-src=" {{user.image}} " class="img-thumbnail img-responsive img-circle pull-left " ng-class-even="pull-right
+								" ng-class-odd="pull-left" style="width:70px; "> -->
                         </div>
                         <div class="col-xs-10" ng-class="{'col-xs-pull-2' : (user.username == curtrentUser)}">
                             <div class="panel panel-default ">
                                 <div class="panel-body ng-binding"> <strong>{{user.username}}</strong> : {{user.msg}} <br>
+                                    <br>
                                     <span class="label label-info ng-binding">{{user.date | date: 'h:mma'}}</span>
                                 </div>
                             </div>
