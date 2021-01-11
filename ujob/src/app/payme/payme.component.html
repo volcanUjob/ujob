@@ -63,30 +63,46 @@
               ><i class="fas fa-user-edit"></i
             ></a>
             <a
-            href="http://localhost:8000/" target="_blank"
-            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-            title="Privet-Chat"
-            ><i class="fas fa-comment-dots"></i></a>
+              href="http://localhost:8000/"
+              target="_blank"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+              title="Privet-Chat"
+              ><i class="fas fa-comment-dots"></i
+            ></a>
           </div>
         </div>
         <!--  -->
       </div>
     </div>
-  
-<div class="container1">
-  <div *ngIf="!paidFor">
-    <h1>Every Month - {{ product.price }} TDN</h1>
+<br>
+<br>
+<br>
 
-    <p>{{ product.description }}</p>
+          <div class="col-xl-2 col-lg-2">
+            <div class="logo">
+              <a routerLink=""
+                ><img src="../../assets/assets/img/logo/logo222.png" alt=""
+              /></a>
+            </div>
+          </div>
+ 
 
-    <!-- <img width="400" [src]="product.img" /> -->
-  </div>
+    <div class="container1">
+      <div *ngIf="!paidFor">
+        <h1>Every Month - {{ product.price }} TDN</h1>
 
-  <div *ngIf="paidFor">
-    <h1>Yay, you bought a sweet service!</h1>
+        <p>{{ product.description }}</p>
 
-    <img src="assets/giphy.gif" />
-  </div>
+        <!-- <img width="400" [src]="product.img" /> -->
+      </div>
 
-  <div [hidden]="paidFor" #paypal></div>
-</div>
+      <div *ngIf="paidFor">
+        <h1>Yay, you bought a sweet service!</h1>
+
+        <img src="assets/giphy.gif" />
+      </div>
+
+      <div [hidden]="paidFor" #paypal></div>
+    </div>
+  </header>
+</html>
