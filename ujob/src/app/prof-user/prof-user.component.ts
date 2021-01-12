@@ -10,16 +10,22 @@ import { UserService } from '../services/user.service.service';
   styleUrls: ['./prof-user.component.scss'],
 })
 export class ProfUserComponent implements OnInit {
-  postCmp:any[]=[];
-  image: any='';
-  isLoggedIn = false
+  postCmp: any[] = [];
+  image: any = '';
+  isLoggedIn = false;
   user = JSON.parse(localStorage.getItem('user') || '{}');
+
+  img: any;
+
   pathOrigine: string = 'http://localhost:3000/';
 
-  constructor(private _http: HttpClient, private router: Router,
+  constructor(
+    private _http: HttpClient,
+    private router: Router,
     private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService) {}
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.getUserById();
@@ -29,56 +35,81 @@ export class ProfUserComponent implements OnInit {
       }),
     };
 
-    this.httpClient.get(this.pathOrigine+'post', httpOptions)
-     .subscribe((data:any)=>{
-       this.postCmp.push(...data);
-       this.postCmp=this.postCmp.filter(p=>p.posterId==this.user._id)
-       console.log(this.postCmp)
-     })
-
+    this.httpClient
+      .get(this.pathOrigine + 'post', httpOptions)
+      .subscribe((data: any) => {
+        this.postCmp.push(...data);
+        this.postCmp = this.postCmp.filter((p) => p.posterId == this.user._id);
+        console.log(this.postCmp);
+      });
   }
 
-  fileChoosen(event:any){
-    if(event.target.value){
-      this.image=<File>event.target.files[0]
+  deletePost(item: any) {
+    if (item._id) {
+      this.httpClient
+        .delete(this.pathOrigine + 'post/' + item._id)
+        .subscribe((res: any) => {
+          alert('item deleted from data base');
+          this.postCmp = this.postCmp.filter((p) => p._id !== item._id);
+        });
+    }
+  }
 
-      console.log(this.image)
-    }  
+  fileChoosen(event: any) {
+    if (event.target.value) {
+      this.image = <File>event.target.files[0];
+
+      console.log(this.image);
+    }
   }
 
   getUserById() {
     var id = this.user._id;
+
     this.userService.myNewProf(id).subscribe((response) => {
       this.user = response;
+      console.log(this.user.image);
+      var x = this.user.image.toString().split('');
+      var image = '';
+      for (var i = 12; i < x.length; i++) {
+        image += x[i];
+      }
+      this.img = image;
+      console.log(this.img);
     });
   }
- addPost(form: NgForm) {
-    let fd=new FormData();
-    if(this.image!==''){
+  addPost(form: NgForm) {
+    let fd = new FormData();
+    if (this.image !== '') {
       fd.append('image', this.image, this.image.name);
-      this.httpClient.post(this.pathOrigine +'api/upload', fd)
-      .subscribe((res:any)=>{
-        console.log(this.user._id);
+      this.httpClient
+        .post(this.pathOrigine + 'api/upload', fd)
+        .subscribe((res: any) => {
+          console.log(this.user._id);
 
-    var obj = {
-      posterId: this.user._id,
-      message: form.value.post,
-      imageURL: res.urlImage
-    }
-    
+          var obj = {
+            posterId: this.user._id,
+            message: form.value.post,
+            imageURL: res.urlImage,
+          };
 
-    this.userService.newPost(obj).subscribe((response) => {
-      console.log(response);
-      if(this.postCmp.length>0){
-      this.postCmp.unshift({message:obj.message , imageURL:obj.imageURL})
-      }else{
-        this.postCmp.push({message:obj.message , imageURL:obj.imageURL})
-      }
-    });
-        console.log(res);
-      })
+          this.userService.newPost(obj).subscribe((response) => {
+            console.log(response);
+            if (this.postCmp.length > 0) {
+              this.postCmp.unshift({
+                message: obj.message,
+                imageURL: obj.imageURL,
+              });
+            } else {
+              this.postCmp.push({
+                message: obj.message,
+                imageURL: obj.imageURL,
+              });
+            }
+          });
+          console.log(res);
+        });
     }
-    
   }
   onlogout() {
     this.isLoggedIn = false;
@@ -86,5 +117,7 @@ export class ProfUserComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login-user']);
   }
+  chat() {
+    window.open('http://localhost:5000/', '_blank');
+  }
 }
-

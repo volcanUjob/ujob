@@ -19,7 +19,7 @@ export class SigneUserComponent implements OnInit {
     job: '',
     email: '',
     password: '',
-
+    
     image: '',
     phone: '',
     webSite: '',
