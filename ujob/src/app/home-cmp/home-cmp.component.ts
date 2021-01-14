@@ -90,8 +90,9 @@ export class HomeCmpComponent implements OnInit {
   }
 
   postComment(id: any) {
+    let element = document.getElementById( 'elem' + id ) as HTMLInputElement
     if (document.getElementById('elem' + id) !== null) {
-      this.comment =document.getElementById('elem' + id).value;
+      this.comment = element.value;
       var obj = {
         comment: this.comment,
         postId: id,
