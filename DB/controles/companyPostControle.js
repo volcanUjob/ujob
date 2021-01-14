@@ -55,7 +55,7 @@ exports.delete_post = function (req, res) {
 };
 
 var post = require("../models/companyPostModel");
-var Comment = require("../models/company-searcher-Comment");
+var Comment = require("../models/company-searcher-comment");
 
 exports.delete_comments = function (req, res) {
   Comment.deleteMany({}, function (err, comment) {
