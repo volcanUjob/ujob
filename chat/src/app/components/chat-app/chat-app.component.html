@@ -1,8 +1,10 @@
 
 <section class="main">
   <header>
-    <h4>Chat</h4>
+    <img class="container" src="/assets/logo222.png">
+   
   </header>
+  <br>
   <section *ngIf="!currentUser">
     <chat-name-popup (onUserNameChange)="handleName($event)"></chat-name-popup>
   </section>
