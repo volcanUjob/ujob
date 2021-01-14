@@ -15,10 +15,11 @@ export class HomeCmpComponent implements OnInit {
   filter: any = [];
   name = '';
   image: any = '';
+  image1:any ="";
   pathOrigine: string = 'http://localhost:3000/';
   user = JSON.parse(localStorage.getItem('user') || '{}');
 
-  constructor(private httpClient: HttpClient,  @Inject(DOCUMENT) document) {}
+  constructor(private httpClient: HttpClient,  @Inject(DOCUMENT)  private document: Document) {}
 
   currentFriend(friend: any) {
     localStorage.setItem('friend', JSON.stringify(friend));
@@ -67,11 +68,25 @@ export class HomeCmpComponent implements OnInit {
     this.httpClient
     .get(this.pathOrigine+'comments/'+id,httpOptions)
     .subscribe((comments:any)=>{
+      
         this.commentPostCmp.push(...comments)
+       
+        for (var i = 0; i < this.commentPostCmp.length; i++) {
+          var x =  this.commentPostCmp[i].commenterId.image.toString().split('');
+          var img = '';
+          for (var j = 12; j < x.length; j++) {
+            img += x[j];
+          }
+          this.image1 = img;
+          this.commentPostCmp[i].commenterId.image = this.image1;
+        }
+      
+
         var modal = document.getElementById('myModal');
     if(modal!==null)
         modal.style.display='block';
     this.showModal = true;
+    
     })
     
     var modal = document.getElementById('myModal');
@@ -93,7 +108,7 @@ export class HomeCmpComponent implements OnInit {
       .post(this.pathOrigine + 'comment', obj)
       .subscribe((res: any) => {
         console.log(res);
-        alert('comment created');
+       
         this.comment = '';
       });
     }else{
