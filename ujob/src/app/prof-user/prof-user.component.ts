@@ -49,7 +49,7 @@ export class ProfUserComponent implements OnInit {
       this.httpClient
         .delete(this.pathOrigine + 'post/' + item._id)
         .subscribe((res: any) => {
-          alert('item deleted from data base');
+          
           this.postCmp = this.postCmp.filter((p) => p._id !== item._id);
         });
     }
