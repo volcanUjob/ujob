@@ -1,0 +1,388 @@
+<html>
+  <title>ujob</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Open Sans", sans-serif;
+    }
+  </style>
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header">
+        <div class="w3-top">
+          <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+            <a
+              class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+              href="javascript:void(0);"
+              onclick="openNav()"
+              ><i class="fa fa-bars"></i
+            ></a>
+            <a
+              routerLink="/home-cmp"
+              title="Home"
+              class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+              ><i class="fa fa-home w3-margin-right"></i>Ujob</a
+            >
+            <a
+              routerLink="/myprofile-cmp"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+              title="My Profile"
+              ><i class="fa fa-user"></i
+            ></a>
+
+            <a
+              routerLink="/edit-profile-cmp"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+              title="Edit Profile"
+              ><i class="fas fa-user-edit"></i
+            ></a>
+            <a
+              href="http://localhost:8000/" target="_blank"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+              title="Privet-Chat"
+              ><i class="fas fa-comment-dots"></i></a>
+
+              
+            <a
+              (click)="onlogout()"
+              class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+              title="LOGOUT"
+            >
+              <img
+                src="assets/{{ img }}"
+                class="w3-circle"
+                style="height: 23px; width: 23px"
+              />
+            </a>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+
+    <header></header>
+
+    <body class="w3-theme-l5">
+      <!-- Navbar -->
+
+      <!-- Navbar on small screens -->
+      
+      <!-- Page Container -->
+      <div
+        class="w3-container w3-content"
+        style="max-width: 1400px; margin-top: 80px"
+      >
+        <!-- The Grid -->
+        <div class="w3-row">
+          <!-- Left Column -->
+          <div class="w3-col m3">
+            <!-- Profile -->
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container">
+                <h4 class="w3-center"><strong>{{ user.username }}</strong></h4>
+                <p class="w3-center">
+                  <img
+                    src="assets/{{ img }}"
+                    class="w3-circle"
+                    style="height: 106px; width: 106px"
+                    alt="Avatar"
+                  />
+                </p>
+                <hr />
+                <p>
+                  <i class="fa fa-at fa-fw w3-margin-right w3-text-theme"></i>
+                  <strong>
+                  {{ user.email }}
+                </strong>
+                </p>
+                <p>
+                  <i
+                    class="fas fa-phone-square fa-fw w3-margin-right w3-text-theme"
+                  ></i>
+                  <strong>
+                  {{ user.phone }}
+                  </strong>
+                </p>
+                
+              </div>
+            </div>
+            <br />
+
+            <!-- Accordion -->
+            <div class="w3-card w3-round">
+              <div class="w3-white">
+                <div id="Demo1" class="w3-hide w3-container">
+                  <p>Some text..</p>
+                </div>
+  
+                <button class="w3-button w3-block w3-theme-l1 w3-left-align">
+                  <i class="fa fa-users fa-fw w3-margin-right"></i> My Friends
+                </button>
+                
+                
+                <button class="w3-button w3-block w3-theme-l1 w3-left-align" routerLink="/payme">
+                  <i class="fab fa-paypal fa-fw w3-margin-right"></i> Payment
+                 
+                </button>
+              </div>
+            </div>
+            <br />
+           
+
+            <!-- Interests -->
+           
+           
+            <br />
+
+            <!-- Alert Box -->
+            <div
+              class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small"
+            >
+              <span
+               
+                class="w3-button w3-theme-l3 w3-display-topright"
+              >
+              <i class="far fa-eye"></i>
+              </span>
+              <p><strong>Hey!</strong></p>
+              <p>People are looking at your profile. Find out who.</p>
+            </div>
+
+            <!-- End Left Column -->
+          </div>
+
+          <!-- Middle Column -->
+          <div class="w3-col m7">
+            <div class="w3-row-padding">
+              <div class="w3-col m12">
+                <div class="w3-card w3-round w3-white">
+                  <div class="w3-container w3-padding">
+                    <h6 class="w3-opacity"></h6>
+                    <form #post="ngForm" (ngSubmit)="addPost(post)">
+                      <input
+                        ngModel
+                        name="post"
+                        type="text"
+                        placeholder="Create a new post"
+                        class="form-control ges-form-control"
+                        contenteditable="true"
+                      />
+                      <br />
+  
+                      <!-- </p> -->
+                      <button type="submit" class="w3-button w3-theme">
+                        <i class="far fa-paper-plane"></i>  Post
+                      </button>
+                      {{ " " }}
+                      <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title"></span>
+                        <input
+                          type="file"
+                          accept="image/png, image/jpeg, image/gif"
+                          name="input-file-preview"
+                          (input)="fileChoosen($event)"
+                        />
+                       
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div
+              class="w3-container w3-card w3-white w3-round w3-margin"
+              *ngFor="let item of postCmp"
+            >
+              <br />
+              <img
+                src="assets/{{ img }}"
+                alt="Avatar"
+                class="w3-left w3-circle w3-margin-right"
+                style="width: 60px"
+              />
+  
+              <a
+                class="w3-button w3-blue w3-right"
+                type="button"
+                (click)="deletePost(item)"
+              >
+                <i class="far fa-trash-alt"></i>
+              </a>
+              <h4><strong>{{ user.username }}</strong></h4>
+              <br />
+              <hr class="w3-clear" />
+              <p>
+                {{ item.message }}
+              </p>
+              <div class="w3-row-padding" style="margin: 0 -16px">
+                <div class="w3-half">
+                  <img
+                    src="{{ item.imageURL }}"
+                    style="width: 100%"
+                    alt="Northern Lights"
+                    class="w3-margin-bottom"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="w3-button w3-theme-d1 w3-margin-bottom"
+              >
+                <i class="fa fa-thumbs-up"></i>  Like
+              </button>
+              <button
+                type="button"
+                class="w3-button w3-theme-d2 w3-margin-bottom"
+              >
+                <i class="fa fa-comment"></i>  Comment
+              </button>
+            </div>
+  
+            <!-- End Middle Column -->
+          </div>
+  
+
+          <!-- Right Column -->
+          <div class="w3-col m2">
+            <div class="w3-card w3-round w3-white w3-center">
+              <div class="w3-container">
+                <p>User Request</p>
+                <img
+                  src="assets/IMG_20201218_095959.jpg"
+                 
+                  style="width: 50%"
+                />
+                <p><strong>Wassim</strong></p>
+                
+                <div class="w3-row w3-opacity">
+                  <div class="w3-half">
+                    <button
+                      class="w3-button w3-block w3-green w3-section"
+                      title="Accept"
+                    >
+                      <i class="fa fa-check"></i>
+                    </button>
+                  </div>
+                  <div class="w3-half">
+                    <button
+                      class="w3-button w3-block w3-red w3-section"
+                      title="Decline"
+                    >
+                    <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="w3-card w3-round w3-white w3-center">
+              <div class="w3-container">
+                <p>Company Request</p>
+                <img
+                  src="assets/download.png"
+                  
+                  style="width: 50%"
+                /><br />
+                <p><strong>TUNISAIR</strong></p>
+                <div class="w3-row w3-opacity">
+                  <div class="w3-half">
+                    <button
+                      class="w3-button w3-block w3-green w3-section"
+                      title="Accept"
+                    >
+                      <i class="fa fa-check"></i>
+                    </button>
+                  </div>
+                  <div class="w3-half">
+                    <button
+                      class="w3-button w3-block w3-red w3-section"
+                      title="Decline"
+                    >
+                    <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+  
+            <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+              <p>ADS</p>
+            </div>
+            <br />
+  
+            <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+              <p><i class="fa fa-bug w3-xxlarge"></i></p>
+            </div>
+  
+            <!-- End Right Column -->
+          </div>
+
+          <!-- End Grid -->
+        </div>
+
+        <!-- End Page Container -->
+      </div>
+      <br />
+
+ 
+
+      <script>
+        // Accordion
+        function myFunction(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-theme-d1";
+          } else {
+            x.className = x.className.replace("w3-show", "");
+            x.previousElementSibling.className = x.previousElementSibling.className.replace(
+              " w3-theme-d1",
+              ""
+            );
+          }
+        }
+
+        // Used to toggle the menu on smaller screens when clicking on the menu button
+        function openNav() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+      </script>
+    </body>
+  </header>
+</html>

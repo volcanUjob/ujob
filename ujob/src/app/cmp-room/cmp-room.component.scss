@@ -1,0 +1,15 @@
+img{
+  width: 75px
+}
+
+
+
+.categories-area .single-cat {
+  height: 300px;
+  width:300px;
+  border-radius:15px;
+}
+.categories-area .single-cat::before {
+  border-radius: 15px;
+  
+}

@@ -1,0 +1,164 @@
+<title>ujob</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Open+Sans"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Open Sans", sans-serif;
+  }
+</style>
+<header>
+  <!-- Header Start -->
+  <div class="header-area">
+    <div class="main-header">
+      <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+            href="javascript:void(0);"
+            onclick="openNav()"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <a
+            routerLink="/home-cmp"
+            title="Home"
+            class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+            ><i class="fa fa-home w3-margin-right"></i>Ujob</a
+          >
+          <a
+            routerLink="/myprofile-cmp"
+            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            title="My Profile"
+            ><i class="fa fa-user"></i
+          ></a>
+
+          <a
+            routerLink="/edit-profile-cmp"
+            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            title="Edit Profile"
+            ><i class="fas fa-user-edit"></i
+          ></a>
+          <a
+            routerLink="/peer"
+            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            title="Call video "
+            ><i class="fas fa-headset"></i
+          ></a>
+          <a
+            href="http://localhost:8000/" target="_blank"
+            class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            title="Privet-Chat"
+            ><i class="fas fa-comment-dots"></i></a>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="back">
+    <div>
+      <div class="ui container">
+        <!-- <h1 class="ui header">Simple WebRTC Messenger</h1>
+      <hr /> -->
+        <div class="ui two column stackable grid">
+          <!-- Local Camera -->
+
+          <div class="video-grid">
+            <div *ngFor="let video of videos">
+              <span
+                *ngIf="
+                  video.userId !== currentUserId;
+                  else currentUserVideoLabel
+                "
+                >{{ video.userId }}</span
+              >
+              <ng-template #currentUserVideoLabel>
+                <span></span>
+              </ng-template>
+              <video
+                [srcObject]="video.srcObject"
+                (loadedmetadata)="onLoadedMetadata($event)"
+                [muted]="video.muted"
+              ></video>
+            </div>
+          </div>
+
+          <!-- <h4 class="ui center aligned header" style="margin-left: 80%">
+          Local Camera
+        </h4> -->
+        </div>
+
+        <!-- Remote Cameras -->
+        <!-- <h3 class="ui center aligned header">Remote Camera</h3> -->
+
+        <div class="cla">
+          <div class="video-grid">
+            <div *ngFor="let video of videos">
+              <span
+                *ngIf="
+                  video.userId !== currentUserId;
+                  else currentUserVideoLabel
+                "
+                >{{ video.userId }}</span
+              >
+              <ng-template #currentUserVideoLabel>
+                <span></span>
+              </ng-template>
+              <video
+                class="cla"
+                [srcObject]="video.srcObject"
+                (loadedmetadata)="onLoadedMetadata($event)"
+                [muted]="video.muted"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" routerLink="/peer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-camera-video"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175l3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+          ></path>
+        </svg>
+        End Call
+      </button>
+    </div>
+  </div>
+</header>

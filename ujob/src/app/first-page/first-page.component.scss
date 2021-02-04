@@ -1,0 +1,13 @@
+img {
+  width: 75px;
+}
+
+#image {
+  width: 100px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  // cursor: pointer;
+  color: hsl(211deg 28% 25%);
+  background-color: hsl(354deg 70% 54%);
+}
